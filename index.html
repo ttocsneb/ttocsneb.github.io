@@ -6,15 +6,67 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
+        
+        <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+        <link rel="stylesheet" href="style.css"/>
+        
     </head>
     <body>
         
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">TtocsNeb</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Page 1</a></li>
+                    <li><a href="#">Page 2</a></li>
+                    <li><a href="#">Page 3</a></li>
+                </ul>
+                
+            </div>
+        </nav>
+        
         <div class="container">
-            <h1>My First Bootstrap Page</h1>
-            <p>Hello World!</p> 
+            <div id="spacer"></div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="row">
+                        <h3>Blog #1</h3>
+                        <h6>xx/xx/xx</h6>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consequat suscipit consequat. Etiam porttitor lacinia lacus, ut ullamcorper magna viverra a. Praesent et libero tempus, viverra lectus in, tempor justo. Nunc lacinia, tellus sed rhoncus lacinia, velit risus bibendum elit, quis consequat lectus odio non nunc. Etiam convallis placerat lectus et malesuada. Duis a suscipit tortor, eget sodales dolor. Integer ullamcorper lectus et turpis ...  <a href="#">see more</a>
+                        </p>
+                    </div>
+                    <div class="row">
+                        <h3>Blog #2</h3>
+                        <h6>xx/xx/xx</h6>
+                        <p>
+                            Integer ut lacus pharetra arcu tempus imperdiet rutrum non lacus. Quisque volutpat vitae nisl id porttitor. Etiam non felis est. Morbi ut nisl vitae eros euismod euismod eget sit amet libero. Cras gravida libero a elit hendrerit, quis posuere augue hendrerit. Nullam id pulvinar augue. Donec tempus nibh nec imperdiet facilisis. Proin pellentesque sem mauris, id luctus enim auctor iaculis. Etiam in risus quis neque sodales lacinia in nec magna. Don...  <a href="#">see more</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-4" id="sidebar">
+                    <div class="row">
+                        <h4>Featured</h4>
+                        <h5><a href="#">Blog #1</a></h5>
+                        <h6>xx/xx/xx</h6>
+                    </div>
+                    <div class="row">
+                        <a class="twitter-timeline" href="https://twitter.com/TtocsNeb" data-widget-id="683131836873093120">Tweets by @TtocsNeb</a>
+                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
 </html>
