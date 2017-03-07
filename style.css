@@ -2,8 +2,13 @@
     /*border-left: Solid black 1px;*/
 }
 
+
 #spacer {
     height: 60px;
+}
+
+#spacer-50px {
+    height: 50px;
 }
 
 body {
@@ -22,4 +27,33 @@ a:hover {
     color: lightgrey;
     /*font-weight: bold;*/
     text-decoration: none;
+}
+
+.carousel-inner {
+    text-align: center;
+}
+.carousel-control {
+    width: 0;
+}
+.carousel-control.left,
+.carousel-control.right {
+	opacity: 1;
+	filter: alpha(opacity=100);
+	background-image: none;
+	background-repeat: no-repeat;
+	text-shadow: none;
+}
+.carousel-control.left span {
+	padding-top: 15px;
+    padding-left: 15px;
+}
+.carousel-control.right span {
+	padding-top: 15px;
+    padding-right: 45px;
+}
+
+.carousel-control.left span:hover,
+.carousel-control.right span:hover {
+	opacity: .7;
+	filter: alpha(opacity=70);
 }
