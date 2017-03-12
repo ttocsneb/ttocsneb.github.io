@@ -16,10 +16,12 @@
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         
-        <link rel="stylesheet" href="style.css"/>
+        <link rel="stylesheet" href="/style.css"/> <!-- put StyleSheet Here -->
         
     </head>
     <body>
+        
+        <!--          NavBar              -->
         
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
@@ -29,59 +31,45 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">TtocsNeb</a>
+                    <a class="navbar-brand" href="/">TtocsNeb</a>
                 </div>
                 <div class="collapse navbar-collapse" id="mynav">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#">Page 1</a></li>
-                        <li><a href="#">Page 2</a></li>
-                        <li><a href="#">Page 3</a></li>
+                        <li class="active"><a href="/">Home</a></li>
+                        <li><a href="/">Page 1</a></li>
+                        <li><a href="/">Page 2</a></li>
+                        <li><a href="/">Page 3</a></li>
                     </ul>
                 </div>
                 
             </div>
         </nav>
         
+        <!--         Canvas                -->
+        
         <div class="container">
             <div id="spacer"></div>
             <div class="row">
                 <div class="col-sm-8">
-                    <div class="row">
-                        <h3><a href="/blog/2017/03/lotf1/">Lord of the Flies #1</a></h3>
-                        <h6>3/11/17</h6>
-                        <p>
-                            In English class, we have been reading The Lord of the Flies.  We are assigned to write about how our actions relate to characters in the book.  I will be writing about my similarities with a few characters in the book, I will most likely spit up each character into a separate post.  The first chara...  <a href="/blog/2017/03/lotf1/">see more</a>
-                        </p>
-                    </div>
-                    <div class="row">
-                        <h3>Blog #2</h3>
-                        <h6>xx/xx/xx</h6>
-                        <p>
-                            Integer ut lacus pharetra arcu tempus imperdiet rutrum non lacus. Quisque volutpat vitae nisl id porttitor. Etiam non felis est. Morbi ut nisl vitae eros euismod euismod eget sit amet libero. Cras gravida libero a elit hendrerit, quis posuere augue hendrerit. Nullam id pulvinar augue. Donec tempus nibh nec imperdiet facilisis. Proin pellentesque sem mauris, id luctus enim auctor iaculis. Etiam in risus quis neque sodales lacinia in nec magna. Don...  <a href="#">see more</a>
-                        </p>
-                    </div>
+                    <!--            Main Content               -->
+                    <!--[MainContent]-->
                 </div>
+                <!--              SideBar           -->
                 <div class="col-sm-4" id="sidebar">
                     <!--                    Featured Carousel                    -->
                     <div class="row">
                         <h4>Featured</h4>
                         
+                        <!--          Featured Carousel              -->
+                        
                         <div id="carousel-featured" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
                                 <li data-target="#carousel-featured" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-featured" data-slide-to="1"></li>
+                                <li data-target="#carousel-featured" data-slide-to="2"></li>
                             </ol>
                             <div class="carousel-inner">
-                                <div class="item active">
-                                    <div class="col-xs-4">
-                                        <h5><a href="/blog/2017/03/lotf1/">Lord of the Flies #1</a></h5>
-                                        <h6>3/11/17</h6>
-                                    </div>
-                                    <div class="col-xs-4">
-                                    </div>
-                                    <div class="col-xs-4">
-                                    </div>
-                                </div>
+                                <!--[Carousel]-->
                             </div>
                             <a class="left carousel-control" href="#carousel-featured" data-slide="prev">
                                 <span class="glyphicon glyphicon-chevron-left"></span>
@@ -93,6 +81,7 @@
                             <div class="row" id="spacer-50px"></div>
                         </div>
                     </div>
+                    <!--              Twitter Feed              -->
                     <div class="row">
                         <a class="twitter-timeline" href="https://twitter.com/TtocsNeb" data-widget-id="683131836873093120">Tweets by @TtocsNeb</a>
                         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
