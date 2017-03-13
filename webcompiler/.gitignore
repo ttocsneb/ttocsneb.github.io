@@ -16,7 +16,6 @@ gradle-app.setting
 # gradle/wrapper/gradle-wrapper.properties
 ### Java template
 # Compiled class file
-*.class
 
 # Log file
 *.log
@@ -62,7 +61,6 @@ $RECYCLE.BIN/
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff:
-.idea/**/workspace.xml
 .idea/**/tasks.xml
 .idea/dictionaries
 
@@ -76,8 +74,6 @@ $RECYCLE.BIN/
 .idea/**/uiDesigner.xml
 
 # Gradle:
-.idea/**/gradle.xml
-.idea/**/libraries
 
 # Mongo Explorer plugin:
 .idea/**/mongoSettings.xml
@@ -101,3 +97,4 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
+.idea/
