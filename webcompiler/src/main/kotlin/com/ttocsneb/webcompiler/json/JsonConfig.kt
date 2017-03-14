@@ -11,7 +11,7 @@ class JsonConfig {
     val markdown:String = ""//the location of the .md posts
     val blog:String = ""//the location of the html posts
 
-    var templatehash:Int = 0
+    var featuredhash:Int = 0
 
 
 }

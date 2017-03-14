@@ -2,8 +2,8 @@
   "featured": [
     "2017/03/lotf1.md"
   ],
-  "template": "templates/layout.html",
+  "template": "templates/layout.json",
   "markdown": "blogposts",
   "blog": "blog",
-  "templatehash": -1227571094
+  "featuredhash": 660942633
 }
