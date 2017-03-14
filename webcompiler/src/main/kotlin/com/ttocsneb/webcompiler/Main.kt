@@ -34,7 +34,7 @@ class Main {
             val templateconfig = gson.fromJson(readFile(config.template), JsonTemplate::class.java)
             var template = readFile(File(config.template).parentFile.path + "/" + templateconfig.file)
 
-            val changed = template.hashCode() != templateconfig.hash || config.featured.hashCode() != config.featuredhash || true
+            val changed = template.hashCode() != templateconfig.hash || config.featured.hashCode() != config.featuredhash
             if(changed) {
                 //modify the saved hash to the current hash
                 templateconfig.hash = template.hashCode()
