@@ -2,7 +2,7 @@ group 'com.ttocsneb'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.0.4'
+    ext.kotlin_version = '1.0.5'
 
     repositories {
         mavenCentral()
@@ -14,6 +14,9 @@ buildscript {
 
 apply plugin: 'idea'
 apply plugin: 'kotlin'
+apply plugin: 'application'
+
+mainClassName = "com.ttocsneb.webcompiler.MainKt"
 
 repositories {
     mavenCentral()
@@ -24,4 +27,10 @@ dependencies {
     compile "com.google.code.gson:gson:2.8.0"
     compile group: 'com.vladsch.flexmark', name: 'flexmark', version: '0.18.0'
 
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
 }

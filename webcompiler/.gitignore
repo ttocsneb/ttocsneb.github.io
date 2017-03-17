@@ -98,3 +98,5 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 .idea/
+src/main/kotlin/META-INF/
+local.properties

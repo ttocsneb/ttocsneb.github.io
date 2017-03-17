@@ -79,7 +79,7 @@ class Main {
                 if(cont.size == 1) {
                     cont = listOf("{\"title\": \"null\",\"date\":\"null\"", cont[0])
                 }
-                val mdconfig = gson.fromJson(cont.get(0) + "}", JsonMD::class.java)
+                val mdconfig = gson.fromJson(cont[0] + "}", JsonMD::class.java)
 
 
                 //if the file has not changed since last compile, and we are not compiling everything, skip this file
@@ -100,7 +100,7 @@ class Main {
                 println("Compiling: " + f)
 
                 val dir = File(f)
-                val file = File(dir.parentFile.path.replace(config.markdown, config.blog) + "\\" + dir.nameWithoutExtension + "\\")
+                val file = File(dir.parentFile.path.replace(config.markdown, config.blog) + "/" + dir.nameWithoutExtension + "/")
 
                 //create the directory, if it couldn't be created, give an error and skip the file
                 if(!file.mkdirs()) {
@@ -123,10 +123,10 @@ class Main {
                 val node = p.parse(cont[1])
                 val post = "<h1>" + mdconfig.title + "</h1>\n<h6>" + mdconfig.date + "</h6>\n" + renderer.render(node)
                 val text = template.replace(templateconfig.blog, post).replace(templateconfig.title, mdconfig.title)
-                saveFile(file.path + "\\index.html", text)
+                saveFile(file.path + "/index.html", text)
             }
 
-
+            println("Done!")
 
 
         }
