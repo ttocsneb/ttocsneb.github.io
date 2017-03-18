@@ -11,6 +11,7 @@ import com.vladsch.flexmark.parser.ParserEmulationProfile
 import com.vladsch.flexmark.util.options.MutableDataHolder
 import com.vladsch.flexmark.util.options.MutableDataSet
 import java.io.*
+import java.lang.Math.ceil
 
 /**
  * This is the main entry point for the program, as well as most of the processing.
@@ -20,8 +21,29 @@ class Main {
 
     companion object {
         val configFile:String = "config.json"
+        var loadAll = false
+
+        fun processargs(args:Array<String>):Boolean {
+            var bool = true
+            for(arg in args) {
+                if(arg.startsWith("-")) {
+                    val a = arg.substring(1).toLowerCase()
+                    when(a){
+                        "a" -> loadAll = true
+                        "h", "-help" -> {
+                            println("\t-a\t\t\tload all found files even if they have not changed\n" +
+                                    "\t-h\t--help\tload this help screen")
+                            bool = false
+                        }
+                    }
+                }
+            }
+            return bool
+        }
 
         @JvmStatic  fun main(args: Array<String>) {
+
+            if(!processargs(args))return
 
             //Create a gson with pretty print enabled.
             val gson:Gson = GsonBuilder().setPrettyPrinting().create()
@@ -34,36 +56,22 @@ class Main {
             val templateconfig = gson.fromJson(readFile(config.template), JsonTemplate::class.java)
             var template = readFile(File(config.template).parentFile.path + "/" + templateconfig.file)
 
-            val changed = template.hashCode() != templateconfig.hash || config.featured.hashCode() != config.featuredhash
+            val changed = template.hashCode() != templateconfig.hash || config.featured.hashCode() != config.featuredhash || loadAll
             if(changed) {
                 //modify the saved hash to the current hash
                 templateconfig.hash = template.hashCode()
                 config.featuredhash = config.featured.hashCode()
                 saveFile(configFile, gson.toJson(config))
                 saveFile(config.template, gson.toJson(templateconfig))
-                println("The Template or Featured Section has changed, everything will be compiled..")
+                if(template.hashCode() != templateconfig.hash)println("Template has changed")
+                if(config.featured.hashCode() != config.featuredhash)println("Featured items have changed")
+                println("Loading everything")
+                //println("The Template or Featured Section has changed, everything will be compiled..")
             }
 
-            var carousel = ""
 
-            //compile the Featured bar into the template
-            for(i in config.featured.indices) {
-                val conf = gson.fromJson(readFile(config.markdown + "/" + config.featured[i]).split("};")[0]+"}", JsonMD::class.java)
-                val f = File(config.markdown + "/" + config.featured[i])
-                //get the link to the featured post
-                val file = "\\" + f.parentFile.path.replace(config.markdown, config.blog) + "\\" + f.nameWithoutExtension + "\\"
-
-                //Create the html code for the carousel
-                carousel +=  (if (i%3 == 0) ("<div class=\"item" + (if(i==0) " active" else "") + "\">\n") else "") +
-                        "\t<div class=\"col-xs-4\">\n\t\t<h5><a href=\"" + file + "\">" + conf.title + "</a></h5>\n\t\t<h6>" +
-                        conf.date + "</h6>\n\t</div>\n" + (if(i%3 == 2) "</div>\n" else "")
-            }
-            //Add the final div to the carousel if it hasn't already been created
-            if(config.featured.size%3 != 2) {
-                carousel += "</div>\n"
-            }
-            //Add the carousel content to the template
-            template = template.replace(templateconfig.carousel, carousel)
+            //pre-compile the template
+            template = precompile(config, gson, template, templateconfig)
 
             //Setup the Markdown processor
             val options:MutableDataHolder = MutableDataSet()
@@ -129,6 +137,42 @@ class Main {
             println("Done!")
 
 
+        }
+
+        /**
+         * Compile the template with anything that would apply to the entire website
+         */
+        private fun precompile(config: JsonConfig, gson: Gson, t:String, templateconfig: JsonTemplate):String {
+            var temp = ""
+            var template = t
+            //compile the Featured bar into the template
+            for(i in config.featured.indices) {
+                val conf = gson.fromJson(readFile(config.markdown + "/" + config.featured[i]).split("};")[0]+"}", JsonMD::class.java)
+                val f = File(config.markdown + "/" + config.featured[i])
+                //get the link to the featured post
+                val file = "\\" + f.parentFile.path.replace(config.markdown, config.blog) + "\\" + f.nameWithoutExtension + "\\"
+
+                //Create the html code for the carousel
+                temp +=  (if (i%3 == 0) ("<div class=\"item" + (if(i==0) " active" else "") + "\">\n") else "") +
+                        "\t<div class=\"col-xs-4\">\n\t\t<h5><a href=\"" + file + "\">" + conf.title + "</a></h5>\n\t\t<h6>" +
+                        conf.date + "</h6>\n\t</div>\n" + (if(i%3 == 2) "</div>\n" else "")
+            }
+            //Add the final div to the carousel if it hasn't already been created
+            if(config.featured.size%3 != 2) {
+                temp += "</div>\n"
+            }
+            //Add the carousel content to the template
+            template = template.replace(templateconfig.carousel, temp)
+
+            //create the proper number of carousel button things for the template
+            temp = ""
+            var i=0
+            while(i<ceil(config.featured.size/3.0)) {
+                temp += "<li data-target=\"#carousel-featured\" data-slide-to=\"$i\"" + (if(i == 0)" class=\"active\"" else "") +"></li>\n"
+                i++
+            }
+            template = template.replace(templateconfig.carouselInd, temp)
+            return template
         }
 
         @JvmStatic fun getFilesToCompile(directory:String):List<String> {

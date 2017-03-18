@@ -9,5 +9,6 @@ class JsonTemplate {
     val blog:String = ""
     val carousel:String = ""
     val title:String = ""
+    val carouselInd:String = ""
     var hash:Int = 0
 }
