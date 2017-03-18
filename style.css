@@ -17,6 +17,10 @@ body {
     
 }
 
+.jumbotron {
+    color: dimgrey;
+}
+
 .container a {
     font-family: monospace;
     font-weight: 700;
