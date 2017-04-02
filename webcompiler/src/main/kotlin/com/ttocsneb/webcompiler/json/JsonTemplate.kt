@@ -12,7 +12,7 @@ class JsonTemplate {
 
     class Item {
         val name:String = ""
-        val value:String = ""
+        var value:String = ""
 
     }
 }

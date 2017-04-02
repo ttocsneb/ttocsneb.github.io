@@ -59,6 +59,8 @@ class Main {
             val blog = Blog()
             blog.compile(arg, config)
 
+            val main = MainPage()
+            main.compile(arg, config)
 
             println("Done!")
 

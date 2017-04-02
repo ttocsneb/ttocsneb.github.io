@@ -58,13 +58,13 @@ class Blog {
         //check if everything needs to be compiled.
         val changed = template.hashCode() != templateconfig.hash || config.featured.hashCode() != config.featuredhash || args.loadAll
         if(changed) {
+            if(template.hashCode() != templateconfig.hash)println("Template has changed")
+            if(config.featured.hashCode() != config.featuredhash)println("Featured items have changed")
             //modify the saved hash to the current hash
             templateconfig.hash = template.hashCode()
             config.featuredhash = config.featured.hashCode()
             Main.saveFile(Main.configFile, gson.toJson(config))
             Main.saveFile(templateFile, gson.toJson(templateconfig))
-            if(template.hashCode() != templateconfig.hash)println("Template has changed")
-            if(config.featured.hashCode() != config.featuredhash)println("Featured items have changed")
             println("Compiling All Blogs")
         }
 
