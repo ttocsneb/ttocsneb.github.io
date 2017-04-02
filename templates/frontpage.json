@@ -1,0 +1,27 @@
+{
+  "file": "frontpage.html",
+  "template": "frontpage",
+  "items": [
+    {
+      "name": "blogs",
+      "value": "\u003c!--[blogs]--\u003e"
+    },
+    {
+      "name": "carousel",
+      "value": "\u003c!--[Carousel]--\u003e"
+    },
+    {
+      "name": "carouselInd",
+      "value": "\u003c!--[carouselbuttons]--\u003e"
+    },
+    {
+      "name": "file",
+      "value": "index.html"
+    },
+    {
+      "name": "hash",
+      "value": "1812799495"
+    }
+  ],
+  "hash": 1069447068
+}
