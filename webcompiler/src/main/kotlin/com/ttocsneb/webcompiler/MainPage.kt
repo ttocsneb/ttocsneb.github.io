@@ -181,7 +181,7 @@ class MainPage {
             val dir = File(m.file)
             val file = File(dir.parentFile.path.replace(config.markdown, config.blog) + "/" + dir.nameWithoutExtension + "/")
             val text = renderer.render(p.parse(m.content.substring(0, Math.min(300, m.content.length)) + "... [see more](/$file)"))
-            
+
             temp += "<div class=\"row\">\n\t<h3><a href=\"$file\">${m.json.title}</a></h3>\n\t<h6>${m.json.date}</h6>\n\t$text\n</div>\n"
 
         }

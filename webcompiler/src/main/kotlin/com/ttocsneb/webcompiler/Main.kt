@@ -3,15 +3,8 @@ package com.ttocsneb.webcompiler
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.ttocsneb.webcompiler.json.JsonConfig
-import com.ttocsneb.webcompiler.json.JsonMD
-import com.ttocsneb.webcompiler.json.JsonTemplate
-import com.vladsch.flexmark.html.HtmlRenderer
-import com.vladsch.flexmark.parser.Parser
-import com.vladsch.flexmark.parser.ParserEmulationProfile
-import com.vladsch.flexmark.util.options.MutableDataHolder
-import com.vladsch.flexmark.util.options.MutableDataSet
 import java.io.*
-import java.lang.Math.ceil
+
 
 /**
  * This is the main entry point for the program, as well as most of the processing.
@@ -20,6 +13,7 @@ class Main {
 
     class args {
         var loadAll = false
+        var clean = false
 
         fun processargs(args:Array<String>):Boolean {
             var bool = true
@@ -28,8 +22,13 @@ class Main {
                     val a = arg.substring(1).toLowerCase()
                     when(a){
                         "a" -> loadAll = true
+                        "c", "-clean" -> {
+                            loadAll = true
+                            clean = true
+                        }
                         "h", "-help" -> {
                             println("\t-a\t\t\tload all found files even if they have not changed\n" +
+                                    "\t-c\t--clean\tclean up any output directory of extra unused stuff.  Note that this deletes the entire directory, then recompiles everythin\n" +
                                     "\t-h\t--help\tload this help screen")
                             bool = false
                         }
@@ -55,6 +54,10 @@ class Main {
             //load the config file
 
             val config = gson.fromJson(readFile(configFile), JsonConfig::class.java)
+
+            if(arg.clean) {
+                delete(File(config.blog))
+            }
 
             val blog = Blog()
             blog.compile(arg, config)
@@ -103,6 +106,16 @@ class Main {
             bw.write(content)
             bw.close()
             fw.close()
+        }
+
+        @Throws(IOException::class)
+        @JvmStatic fun delete(f: File) {
+            if (f.isDirectory) {
+                for (c in f.listFiles()!!)
+                    delete(c)
+            }
+            if (!f.delete())
+                throw FileNotFoundException("Failed to delete file: " + f)
         }
     }
 
