@@ -1,7 +1,7 @@
 {
   "title": "Lord of the Flies 1",
   "date": "3/11/17",
-  "hash": -604101135
+  "hash": -2128345405
 };
 
 In English class, we have been reading The Lord of the Flies.  We are assigned to write about how our actions relate to characters in the book.  I will be writing about my similarities with a few characters in the book, I will most likely spit up each character into a separate post.  The first character I will write about is Ralph.  

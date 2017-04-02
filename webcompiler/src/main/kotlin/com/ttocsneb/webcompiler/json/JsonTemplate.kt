@@ -6,9 +6,13 @@ package com.ttocsneb.webcompiler.json
 class JsonTemplate {
 
     val file:String = ""
-    val blog:String = ""
-    val carousel:String = ""
-    val title:String = ""
-    val carouselInd:String = ""
+    val template:String = ""
+    val items:Array<Item> = emptyArray()
     var hash:Int = 0
+
+    class Item {
+        val name:String = ""
+        val value:String = ""
+
+    }
 }
