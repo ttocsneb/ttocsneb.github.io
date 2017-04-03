@@ -14,6 +14,13 @@
     margin-right: auto;
 }
 
+#disqusdiv {
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #spacer-50px {
     height: 50px;
 }
