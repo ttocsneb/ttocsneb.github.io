@@ -7,6 +7,13 @@
     height: 60px;
 }
 
+#twitter-container, #ad {
+    width: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #spacer-50px {
     height: 50px;
 }
@@ -14,7 +21,6 @@
 body {
     background: rgba(49 ,136,183,1);
     color: whitesmoke;
-    
 }
 
 .jumbotron {
@@ -33,6 +39,12 @@ a:hover {
     text-decoration: none;
 }
 
+#carousel-featured {
+    width: 95%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .carousel-inner {
     text-align: center;
@@ -50,11 +62,9 @@ a:hover {
 }
 .carousel-control.left span {
 	padding-top: 15px;
-    padding-left: 15px;
 }
 .carousel-control.right span {
 	padding-top: 15px;
-    padding-right: 45px;
 }
 
 .carousel-control.left span:hover,
