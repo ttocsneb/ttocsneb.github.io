@@ -16,19 +16,89 @@
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         
-        <link rel="stylesheet" href="style.css"/>
+        <link rel="stylesheet" href="/style.css"/>
         
     </head>
     <body>
         
-        <div class="jumbotron text-center">
-            <h1>Under Construction</h1>
-            <p>Come back later</p>
-        </div>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynav">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">TtocsNeb</a>
+                </div>
+                <div class="collapse navbar-collapse" id="mynav">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+        </nav>
         
         <div class="container">
-            <div class="text-center">
-                <iframe src="//giphy.com/embed/l3E6BG56dhjuawAX6?html5=true&hideSocial=true" width="480" height="361.18032786885243" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/computer-napoleon-dynamite-kip-l3E6BG56dhjuawAX6"></a></p>
+            <div id="spacer"></div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <!-- Blogs -->
+                    <div class="row">
+	<h3><a href="blog\2017\04\weatherstation">Weather Station</a></h3>
+	<h6>4/2/17</h6>
+	<p>I am starting a weather station project, taking an old broken weather station, and getting it to work with Arduino and a Raspberry Pi web server.  After a quick inspection of the ports on the old station transmitter, I found that the weather vain uses a 4 wire plug.  This got me worried as the c... <a href="/blog\2017\04\weatherstation">see more</a></p>
+
+</div>
+<div class="row">
+	<h3><a href="blog\2017\03\lotf1">Lord of the Flies 1</a></h3>
+	<h6>3/11/17</h6>
+	<p>In English class, we have been reading The Lord of the Flies.  We are assigned to write about how our actions relate to characters in the book.  I will be writing about my similarities with a few characters in the book, I will most likely spit up each character into a separate post.  The first c... <a href="/blog\2017\03\lotf1">see more</a></p>
+
+</div>
+
+                </div>
+                <div class="col-sm-4" id="sidebar">
+                    <!--                    Featured Carousel                    -->
+                    <div class="row">
+                        <h4>Featured</h4>
+                        
+                        <div id="carousel-featured" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+								<!--		Carousel buttons		-->
+								<li data-target="#carousel-featured" data-slide-to="0" class="active"></li>
+
+                            </ol>
+                            <div class="carousel-inner">
+								<!--		Carousel content		-->
+                                <div class="item active">
+	<div class="col-xs-4">
+		<h5><a href="\blog\2017\04\weatherstation\">Weather Station</a></h5>
+		<h6>4/2/17</h6>
+	</div>
+	<div class="col-xs-4">
+		<h5><a href="\blog\2017\03\lotf1\">Lord of the Flies 1</a></h5>
+		<h6>3/11/17</h6>
+	</div>
+</div>
+
+                            </div>
+                            <a class="left carousel-control" href="#carousel-featured" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-featured" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                            
+                            <div class="row" id="spacer-50px"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <a class="twitter-timeline" href="https://twitter.com/TtocsNeb" data-widget-id="683131836873093120">Tweets by @TtocsNeb</a>
+                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                    </div>
+                </div>
             </div>
         </div>
             
