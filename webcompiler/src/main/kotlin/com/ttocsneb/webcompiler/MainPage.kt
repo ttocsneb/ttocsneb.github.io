@@ -68,7 +68,7 @@ class MainPage {
         if(changed) {
             if(template.hashCode() != templatecfg.hash)println("Template has changed")
             if(config.featured.hashCode() != config.featuredhash)println("Featured items have changed")
-            if(Main.getFiles(config.blog, "md").hashCode() != hash)println("A new post has been posted")
+            if(Main.getFiles(config.markdown, "md").hashCode() != hash)println("A new post has been posted")
 
             //Update the hashes
 
@@ -94,9 +94,9 @@ class MainPage {
             //create the html code for the carousel
             temp +=  (if (i%3 == 0) ("<div class=\"item" + (if(i==0) " active" else "") + "\">\n") else "") +
                     "\t<div class=\"col-xs-4\">\n\t\t<h5><a href=\"" + file + "\">" + conf.title + "</a></h5>\n\t\t<h6>" +
-                    conf.date + "</h6>\n\t</div>\n" + (if(i%3 == 2) "</div>\n" else "")
+                    conf.date + "</h6>\n\t</div>\n" + (if((i+1)%3 == 0) "</div>\n" else "")
         }
-        if(config.featured.size%3 != 2) {
+        if((config.featured.size)%3 != 0) {
             temp += "</div>\n"
         }
         template = template.replace(carousel, temp)

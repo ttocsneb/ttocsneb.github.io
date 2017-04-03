@@ -1,10 +1,13 @@
-Weather Station
-==
+{
+  "title": "Weather Station",
+  "date": "4/2/17",
+  "hash": -538305430
+};
+
+I am starting a weather station project, taking an old broken weather station, and getting it to work with Arduino and a Raspberry Pi web server.  After a quick inspection of the ports on the old station transmitter, I found that the weather vain uses a 4 wire plug.  This got me worried as the colors also matched the i2c wire colors.  After opening the vain, I found no ICs of any kind in the chip.
 
 Weather Vain
 ==
-
-I am starting a weather station project, taking an old broken weather station, and getting it to work with Arduino and a Raspberry Pi web server.  After a quick inspection of the ports on the old station transmitter, I found that the weather vain uses a 4 wire plug.  This got me worried as the colors also matched the i2c wire colors.  After opening the vain, I found no ICs of any kind in the chip.
 
 The board uses two of the four wires, and the other two are relayed from the wind speed device.  the vain uses 8 reed switches, each connected from P4 to P1 through a resistor (each switch has a different resistance).  
 
@@ -50,9 +53,9 @@ The board uses two of the four wires, and the other two are relayed from the win
 The placement of the resistors seem random, and I don't know how I would find which switch is active, as I don't think it is possible to find resistance solely from voltage difference.  I'll have to do some more testing.
 
 
-<img src="chip.png" title="The Weather Vain Chip"></img>
+<img src="chip.jpg" width="100%" title="The Weather Vain Chip"></img>
 
-<img src="chip_highlighted.png" title="The weather Vain Chip, annotated"></img>
+<img src="chip_highlighted.jpg" width="100%" title="The weather Vain Chip, annotated"></img>
 
 anemometer
 ==
