@@ -9,6 +9,7 @@
 
 #spacer-50px {
     height: 50px;
+    width: 50%;
 }
 
 body {
@@ -57,4 +58,14 @@ a:hover {
 .carousel-control.right span:hover {
 	opacity: .7;
 	filter: alpha(opacity=70);
+}
+
+th {
+    padding: 5px;
+}
+
+td {
+    padding-left: 10px;
+    padding-right: 10px;
+    border-left: solid 1px
 }

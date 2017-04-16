@@ -1,10 +1,11 @@
 {
   "featured": [
+    "2017/04/weatherstation pt2.md",
     "2017/04/weatherstation.md",
     "2017/03/lotf1.md"
   ],
   "template": "templates",
   "markdown": "blogposts",
   "blog": "blog",
-  "featuredhash": 1302383334
+  "featuredhash": 625881339
 }

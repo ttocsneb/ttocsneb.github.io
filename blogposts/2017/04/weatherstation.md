@@ -1,7 +1,7 @@
 {
   "title": "Weather Station",
   "date": "4/2/17",
-  "hash": -538305430
+  "hash": -1268881070
 };
 
 I am starting a weather station project, taking an old broken weather station, and getting it to work with Arduino and a Raspberry Pi web server.  After a quick inspection of the ports on the old station transmitter, I found that the weather vain uses a 4 wire plug.  This got me worried as the colors also matched the i2c wire colors.  After opening the vain, I found no ICs of any kind in the chip.

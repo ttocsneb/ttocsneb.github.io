@@ -1,7 +1,7 @@
 {
   "title": "Weather Station Part 2",
   "date": "4/15/17",
-  "hash": 0
+  "hash": 1395718268
 };
 
 I have started working on the main board for the station.  Adding the transeiver, barometer, temperature, and humidity sensor.  It is going pretty well so far.  I have not yet tested the rf24 module, though the two other modules I have confirmed to work.  The MPL115 works pretty well, and seems to give good readings, though I can't really test it without putting it in a vacuum chamber or climbing a mountain, which is fairly difficult, let alone trying to tether it to a computer.  The humidity sensor reads humid in my mouth, and the temperature sensor senses the proper temperature.
