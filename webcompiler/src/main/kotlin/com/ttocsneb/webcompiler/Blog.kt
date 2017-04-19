@@ -11,6 +11,8 @@ import com.vladsch.flexmark.parser.ParserEmulationProfile
 import com.vladsch.flexmark.util.options.MutableDataHolder
 import com.vladsch.flexmark.util.options.MutableDataSet
 import java.io.File
+import java.nio.file.Files
+import java.nio.file.StandardCopyOption
 
 /**
  * Compile Blog
@@ -132,6 +134,12 @@ class Blog {
             val post = "<h1>" + mdconfig.title + "</h1>\n<h6>" + mdconfig.date + "</h6>\n" + renderer.render(node)
             val text = template.replace(blog, post).replace(title, mdconfig.title)
             Main.saveFile(file.path + "/index.html", text)
+            println("\tCopying files..")
+            mdconfig.files.forEach {
+                println("\t\t$it")
+                Files.copy(File(dir.parentFile.path + "/$it").toPath(), File(file.path + "/$it").toPath(), StandardCopyOption.REPLACE_EXISTING)
+            }
+            println("\tDone Copying files")
         }
 
         println("Done Compiling Blogs")

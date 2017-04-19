@@ -45,6 +45,8 @@ class Main {
 
         @JvmStatic  fun main(args: Array<String>) {
 
+            val time:Long = System.currentTimeMillis()
+
             val arg:args = args()
             if(!arg.processargs(args))return
 
@@ -65,7 +67,7 @@ class Main {
             val main = MainPage()
             main.compile(arg, config)
 
-            println("Done!")
+            println("Finished in ${(System.currentTimeMillis()-time)/1000.0} seconds")
 
 
         }

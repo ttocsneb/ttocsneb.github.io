@@ -10,4 +10,5 @@ class JsonMD {
     val title:String = ""
     val date:String = ""
     var hash:Int = 0
+    var files:Array<String> = emptyArray()
 }

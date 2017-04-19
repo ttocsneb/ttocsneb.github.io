@@ -1,6 +1,12 @@
 {
   "title": "Weather Station Part 2",
   "date": "4/15/17",
+  "files": [
+    "chip_top.jpg",
+    "chip_top_hd.jpg",
+    "chip_wiring.jpg",
+    "chip_wiring_hd.jpg"
+  ],
   "hash": -177631935
 };
 

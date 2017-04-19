@@ -1,6 +1,10 @@
 {
   "title": "Weather Station",
   "date": "4/2/17",
+  "files": [
+    "chip.jpg",
+    "chip_highlighted.jpg"
+  ],
   "hash": -680607496
 };
 
