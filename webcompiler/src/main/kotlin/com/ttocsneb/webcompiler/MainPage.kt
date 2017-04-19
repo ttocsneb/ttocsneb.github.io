@@ -25,7 +25,6 @@ class MainPage {
     var file:String = ""
     var templatecfg:JsonTemplate = JsonTemplate()
     var templatefile:String = ""
-    var hashID:Int = 0
 
     fun compile(args: Main.args, config: JsonConfig) {
         println("Compiling MainPage..")
@@ -40,15 +39,15 @@ class MainPage {
             }
         }
         //load the items in the configuration.
-        for(i in templatecfg.items.indices) {
-            val tmp = templatecfg.items[i]
-            when(tmp.name) {
-                "blogs" -> blogs = tmp.value
-                "carousel" -> carousel = tmp.value
-                "carouselInd" -> carouselInd = tmp.value
-                "file" -> file = tmp.value
-            }
-        }
+        templatecfg.items.indices.map { templatecfg.items[it] }
+                .forEach {
+                    when(it.name) {
+                        "blogs" -> blogs = it.value
+                        "carousel" -> carousel = it.value
+                        "carouselInd" -> carouselInd = it.value
+                        "file" -> file = it.value
+                    }
+                }
 
         //load the template file
         template = Main.readFile(File(templatefile).parentFile.path + "/" + templatecfg.file)
@@ -80,9 +79,9 @@ class MainPage {
             //create the html code for the carousel
             temp +=  (if (i%3 == 0) ("<div class=\"item" + (if(i==0) " active" else "") + "\">\n") else "") +
                     "\t<div class=\"col-xs-4\">\n\t\t<h5><a href=\"" + file + "\">" + conf.title + "</a></h5>\n\t\t<h6>" +
-                    conf.date + "</h6>\n\t</div>\n" + (if(i%3 == 2) "</div>\n" else "")
+                    conf.date + "</h6>\n\t</div>\n" + (if((i+1)%3 == 0) "</div>\n" else "")
         }
-        if(config.featured.size%3 != 2) {
+        if((config.featured.size)%3 != 0) {
             temp += "</div>\n"
         }
         template = template.replace(carousel, temp)

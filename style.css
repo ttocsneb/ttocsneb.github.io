@@ -1,34 +1,60 @@
-#sidebar {
-    /*border-left: Solid black 1px;*/
-}
-
-
-#spacer {
-    height: 60px;
-}
-
-#spacer-50px {
-    height: 50px;
-}
-
 body {
     background: rgba(49 ,136,183,1);
     color: whitesmoke;
-    
 }
 
-.container a {
-    font-family: monospace;
-    font-weight: 700;
-    color: white;
+/*Images*/
+
+img {
+    max-width: 100%;
 }
 
-a:hover {
-    color: lightgrey;
-    /*font-weight: bold;*/
-    text-decoration: none;
+/*Ad placement*/
+
+#ad {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:300px;
+    height:250px;
+    /*If I need to have a resizeable ad, it is all prepared, just uncomment the next lines*/
+    /*width: 100%;*/
+    /*padding-bottom: 83.33%;*/
+    position: relative;
 }
 
+#ad > div {
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    background: white;
+}
+
+/*Disqus*/
+
+#disqusdiv {
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*Twiiter*/
+
+#twitter-container {
+    width: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*Carousel*/
+
+#carousel-featured {
+    width: 95%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .carousel-inner {
     text-align: center;
@@ -46,11 +72,9 @@ a:hover {
 }
 .carousel-control.left span {
 	padding-top: 15px;
-    padding-left: 15px;
 }
 .carousel-control.right span {
 	padding-top: 15px;
-    padding-right: 45px;
 }
 
 .carousel-control.left span:hover,
@@ -58,3 +82,42 @@ a:hover {
 	opacity: .7;
 	filter: alpha(opacity=70);
 }
+
+
+/*misc*/
+
+#spacer-50px {
+    height: 50px;
+    width: 50%;
+}
+
+#spacer {
+    height: 60px;
+}
+
+.container a {
+    font-family: monospace;
+    font-weight: 700;
+    color: white;
+}
+
+a:hover {
+    color: lightgrey;
+    /*font-weight: bold;*/
+    text-decoration: none;
+}
+
+.jumbotron {
+    color: dimgrey;
+}
+
+th {
+    padding: 5px;
+}
+
+td {
+    padding-left: 10px;
+    padding-right: 10px;
+    border-left: solid 1px
+}
+
