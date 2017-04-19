@@ -26,7 +26,6 @@ class MainPage {
     var templatecfg:JsonTemplate = JsonTemplate()
     var templatefile:String = ""
     var hashID:Int = 0
-    var hash:Int = 0
 
     fun compile(args: Main.args, config: JsonConfig) {
         println("Compiling MainPage..")
@@ -48,38 +47,25 @@ class MainPage {
                 "carousel" -> carousel = tmp.value
                 "carouselInd" -> carouselInd = tmp.value
                 "file" -> file = tmp.value
-                "hash" -> {
-                    hashID = i
-                    try {
-                        hash = Integer.parseInt(tmp.value)
-                    } catch (e:NumberFormatException) {
-                        println("hash is not valid!")
-                    }
-                }
             }
         }
 
         //load the template file
         template = Main.readFile(File(templatefile).parentFile.path + "/" + templatecfg.file)
 
-        //check whether the mainpage needs to be recompiled
+        //check whether the mainpage needs to be recompiled, note it will be recompiled anyway
         val changed = template.hashCode() != templatecfg.hash || config.featured.hashCode() != config.featuredhash
-                || Main.getFiles(config.markdown, "md").hashCode() != hash || args.loadAll
+                || args.loadAll
         if(changed) {
             if(template.hashCode() != templatecfg.hash)println("Template has changed")
             if(config.featured.hashCode() != config.featuredhash)println("Featured items have changed")
-            if(Main.getFiles(config.blog, "md").hashCode() != hash)println("A new post has been posted")
 
             //Update the hashes
 
             templatecfg.hash = template.hashCode()
             config.featuredhash = config.featured.hashCode()
-            templatecfg.items[hashID].value = (Main.getFiles(config.markdown, "md").hashCode()).toString()
             Main.saveFile(Main.configFile, gson.toJson(config))
             Main.saveFile(templatefile, gson.toJson(templatecfg))
-        } else {
-            println("Nothing to compile")
-            return
         }
 
         //compile the featured bar
@@ -180,7 +166,7 @@ class MainPage {
 
             val dir = File(m.file)
             val file = File(dir.parentFile.path.replace(config.markdown, config.blog) + "/" + dir.nameWithoutExtension + "/")
-            val text = renderer.render(p.parse(m.content.substring(0, Math.min(300, m.content.length)) + "... [see more](/$file)"))
+            val text = renderer.render(p.parse(m.content.substring(0, Math.min(300, m.content.length)))) +  "... <a href=\"$file\">see more</a>"
 
             temp += "<div class=\"row\">\n\t<h3><a href=\"$file\">${m.json.title}</a></h3>\n\t<h6>${m.json.date}</h6>\n\t$text\n</div>\n"
 
