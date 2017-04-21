@@ -9,6 +9,7 @@ package com.ttocsneb.webcompiler.json
 class JsonMD {
     val title:String = ""
     val date:String = ""
+    var unix:Long = 0
     var hash:Int = 0
     var files:Array<String> = emptyArray()
 }

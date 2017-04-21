@@ -13,6 +13,9 @@ import com.vladsch.flexmark.util.options.MutableDataSet
 import java.io.File
 import java.nio.file.Files
 import java.nio.file.StandardCopyOption
+import java.sql.Timestamp
+import java.text.ParseException
+import java.text.SimpleDateFormat
 
 /**
  * Compile Blog
@@ -57,6 +60,8 @@ class Blog {
         }
         template = Main.readFile(File(templateFile).parentFile.path + "/" + templateconfig.file)
 
+
+
         //check if everything needs to be compiled.
         val changed = template.hashCode() != templateconfig.hash || config.featured.hashCode() != config.featuredhash || args.loadAll
         if(changed) {
@@ -92,13 +97,37 @@ class Blog {
             val mdconfig = gson.fromJson(cont[0] + "}", JsonMD::class.java)
 
 
+
+            //Parse the date into a timestamp
+
+            var timestamp:Long = -1
+
+            val formats = Array(3, {""})
+            formats[0] = "MM/dd/yy HH:mm:ss.SSS"
+            formats[1] = "MM/dd/yy HH:mm"
+            formats[2] = "MM/dd/yy"
+
+            for(x in formats) {
+                try {
+                    timestamp = SimpleDateFormat(x).parse(mdconfig.date).time
+                    break
+                } catch (e:ParseException) {
+                    //do nothing..
+                }
+            }
+            if(timestamp.compareTo(-1) == 0) {
+                println("\t\tThere was a problem formatting the date for ${mdconfig.title}")
+            }
+
+
             //if the file has not changed since last compile, and we are not compiling everything, skip this file
-            if(mdconfig.hash == cont[1].hashCode()) {
+            if(mdconfig.hash == cont[1].hashCode() && timestamp.compareTo(-1) == 0) {
                 if(!changed)
                     continue
             } else {
                 //modify the hash value, and save it to file.
                 mdconfig.hash = cont[1].hashCode()
+                mdconfig.unix = timestamp
                 Main.saveFile(f, gson.toJson(mdconfig) + ";" + cont[1])
                 //if the json was uncreated/invalid, don't compile it, give an error, and skip the file
                 if(mdconfig.title == "null") {

@@ -1,0 +1,11 @@
+{
+  "file": "rss.xml",
+  "template": "rss",
+  "items": [
+    {
+      "name": "content",
+      "value": "\u003c!--[content]--\u003e"
+    }
+  ],
+  "hash": -396467838
+}

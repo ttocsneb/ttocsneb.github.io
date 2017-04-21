@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+    <channel>
+        <title>TtocsNeb</title>
+        <link>https://www.ttocsneb.com/</link>
+        <description>A blog containing my personal projects.</description>
+        <language>en</language>
+        <item>
+	<title>Weather Station Part 2</title>
+	<link>http://www.ttocsneb.com/blog/2017/04/weatherstation%20pt2</link>
+	<description>
+
+I have started working on the main board for the station.  Adding the transceiver, barometer, temperature, and humidity sensor.  It is going pretty well so far.  I have not yet tested the rf24 module, though the two other modules I have confirmed to work.  The MPL115 works pretty well and seems to...</description>
+	<pubDate>Sat, 15 Apr 2017 00:00:00 -0600</pubDate>
+	<guid>http://www.ttocsneb.com/blog/2017/04/weatherstation%20pt2</guid>
+</item><item>
+	<title>Weather Station</title>
+	<link>http://www.ttocsneb.com/blog/2017/04/weatherstation</link>
+	<description>
+
+I am starting a weather station project, taking an old broken weather station, and getting it to work with Arduino and a Raspberry Pi web server.  After a quick inspection of the ports on the old station transmitter, I found that the weather vain uses a 4 wire plug.  This got me worried as the col...</description>
+	<pubDate>Sun, 2 Apr 2017 00:00:00 -0600</pubDate>
+	<guid>http://www.ttocsneb.com/blog/2017/04/weatherstation</guid>
+</item><item>
+	<title>Lord of the Flies 1</title>
+	<link>http://www.ttocsneb.com/blog/2017/03/lotf1</link>
+	<description>
+
+In English class, we have been reading The Lord of the Flies.  We are assigned to write about how our actions relate to characters in the book.  I will be writing about my similarities with a few characters in the book, I will most likely spit up each character into a separate post.  The first cha...</description>
+	<pubDate>Sat, 11 Mar 2017 00:00:00 -0700</pubDate>
+	<guid>http://www.ttocsneb.com/blog/2017/03/lotf1</guid>
+</item>
+    </channel>
+</rss>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+    <channel>
+        <title>TtocsNeb</title>
+        <link>https://www.ttocsneb.com/</link>
+        <description>A blog containing my personal projects.</description>
+        <language>en</language>
+        <!--[content]-->
+    </channel>
+</rss>
