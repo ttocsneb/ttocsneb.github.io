@@ -39,15 +39,14 @@ class MainPage {
             }
         }
         //load the items in the configuration.
-        templatecfg.items.indices.map { templatecfg.items[it] }
-                .forEach {
-                    when(it.name) {
-                        "blogs" -> blogs = it.value
-                        "carousel" -> carousel = it.value
-                        "carouselInd" -> carouselInd = it.value
-                        "file" -> file = it.value
-                    }
-                }
+        templatecfg.items.forEach {
+            when(it.name) {
+                "blogs" -> blogs = it.value
+                "carousel" -> carousel = it.value
+                "carouselInd" -> carouselInd = it.value
+                "file" -> file = it.value
+            }
+        }
 
         //load the template file
         template = Main.readFile(File(templatefile).parentFile.path + "/" + templatecfg.file)

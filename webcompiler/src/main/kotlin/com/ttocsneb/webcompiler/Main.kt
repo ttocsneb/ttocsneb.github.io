@@ -67,6 +67,9 @@ class Main {
             val main = MainPage()
             main.compile(arg, config)
 
+            val rss = Rss()
+            rss.compile(arg, config)
+
             println("Finished in ${(System.currentTimeMillis()-time)/1000.0} seconds")
 
 
