@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>TtocsNeb</title>
+        <title>WeatherStation: Software</title>
         
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,7 +16,7 @@
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         
-        <link rel="stylesheet" href="/style.css"/>
+        <link rel="stylesheet" href="/style.css"/> <!-- put StyleSheet Here -->
         
         <!-- Google Analytics -->
         <script>
@@ -24,26 +24,16 @@
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
                 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
                                     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
+            
             ga('create', 'UA-56094841-1', 'auto');
             ga('send', 'pageview');
 
-        </script>
-        
-        <!-- Google Adsense FullPage Ads -->
-        
-        <!-- Dear interested person reading this code..  If you are wondering what the following code does, it displays an adsense fullpage ad every once and a while on mobile only devices, or at least that's what it is suppost to do. -->
-        
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({
-                google_ad_client: "ca-pub-8120696301066168",
-                enable_page_level_ads: true
-            });
-        </script>
+        </script>   
         
     </head>
     <body>
+        
+        <!--          NavBar              -->
         
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
@@ -53,52 +43,72 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">TtocsNeb</a>
+                    <a class="navbar-brand" href="/">TtocsNeb</a>
                 </div>
                 <div class="collapse navbar-collapse" id="mynav">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
+                        <li class="active"><a href="/">Home</a></li>
                     </ul>
                 </div>
                 
             </div>
         </nav>
         
+        <!--         Canvas                -->
+        
         <div class="container">
             <div id="spacer"></div>
             <div class="row">
                 <div class="col-sm-8">
-                    <!-- Blogs -->
-                    <div class="row">
-	<h3><a href="blog/2017/6/weatherstation_software">WeatherStation: Software</a></h3>
-	<h6>6/17/17</h6>
-	<p>I finished wiring the station, though I would not be surprised if I need to make some last minute adjustments.  The last bit of wiring I have done is interfacing with the existing hardware.  The rain gauge and anemometer connect directly to the board with an internal pull-up activated.  The langua... <a href="blog/2017/6/weatherstation_software">see more</a></p>
+                    <!--            Main Content               -->
+                    <h1>WeatherStation: Software</h1>
+<h6>6/17/17</h6>
+<p>I finished wiring the station, though I would not be surprised if I need to make some last minute adjustments.  The last bit of wiring I have done is interfacing with the existing hardware.  The rain gauge and anemometer connect directly to the board with an internal pull-up activated.  The language is connected to D11 for PCINT7 which allows for interrupts.  The weather vane is connected to A0 through a 5k7 resistor to act as a voltage divider with the resistors in the weather vain as the second resistor.  The solar panel connects to the USB pin through a step-up converter to make sure there is a 5V output.</p>
+<p>
+  <a href="wiring.jpg" target="_blank"><img src="wiring_web.jpg" width="100%" title="View original"></a>
+</p>
+<p>As for the software, I created a simple flowchart of what the station will do.</p>
+<p>
+  <a href="flowchart.png" target="_blank"><img src="flowchart_web.png" width="100%" title="View original"></a>
+</p>
+<p>The Program will wait for commands, I expect to update once every 30 seconds.  It will then process the command, then repeat.  It is a very simple system. though will be slightly more complex than that.</p>
+<p>I haven't programmed the commands yet, rather got or getting the processes ready to be commanded. So far have had weatherdump mostly finished, as well as settingdump.  They are not yet functional enough to be plugged into a communications API, but the framework is there.</p>
+<h4>WeatherDump</h4>
+<p>The weatherdump sends back all of the weather data from about the time the dump was requested.  It should start out collecting the wind data as that takes at least 2 seconds.  Everything else reads fairly quickly.  Next is the weather vain, which just finds which of the eight reed switches are closed.  The temperature and humidity come from the DHT22, and pressure comes from the MPL115.  The grain count is stored in a variable that may or may not reset after each reading(I haven't decided yet)</p>
+<h4>SettingDump</h4>
+<p>All of the settings are stored in the internal EEPROM.  The settings are fairly simple, just conversions or other various settings regarding weather data.  I am doing this so that if I find an error with my system, I can easily fix the small issues without having to take down the weather station and reflash it.  I am mainly storing Integers, doubles, and booleans. As EEPROM stores its values as bytes and has no conversion systems, I have created a few converters.  The first converter simplifies the booleans into bytes to conserve memory.  The second converts Integers into two bytes.  The third converts doubles into 5 bytes.  It starts out by finding out how many bits the double needs to become a long.  After that, the long is turned into 2 ints which are then saved using the previous writeInt command.  The last 5th byte stores the number of bits the double is compressed by.</p>
 
-</div>
-<div class="row">
-	<h3><a href="blog/2017/04/weatherstation%20pt2">Weather Station Part 2</a></h3>
-	<h6>4/15/17</h6>
-	<p>I have started working on the main board for the station.  Adding the transceiver, barometer, temperature, and humidity sensor.  It is going pretty well so far.  I have not yet tested the rf24 module, though the two other modules I have confirmed to work.  The MPL115 works pretty well and seems to... <a href="blog/2017/04/weatherstation%20pt2">see more</a></p>
-
-</div>
-<div class="row">
-	<h3><a href="blog/2017/04/weatherstation">Weather Station</a></h3>
-	<h6>4/2/17</h6>
-	<p>I am starting a weather station project, taking an old broken weather station, and getting it to work with Arduino and a Raspberry Pi web server.  After a quick inspection of the ports on the old station transmitter, I found that the weather vain uses a 4 wire plug.  This got me worried as the col... <a href="blog/2017/04/weatherstation">see more</a></p>
-
-</div>
-<div class="row">
-	<h3><a href="blog/2017/03/lotf1">Lord of the Flies 1</a></h3>
-	<h6>3/11/17</h6>
-	<p>In English class, we have been reading The Lord of the Flies.  We are assigned to write about how our actions relate to characters in the book.  I will be writing about my similarities with a few characters in the book, I will most likely spit up each character into a separate post.  The first cha... <a href="blog/2017/03/lotf1">see more</a></p>
-
-</div>
-
+                    <div class="row" id="disqusdiv">
+                        <div id="disqus_thread"></div>
+                        <script>
+                            
+                            /**
+                            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                            /*
+                            var disqus_config = function () {
+                            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                            };
+                            */
+                            (function() { // DON'T EDIT BELOW THIS LINE
+                                var d = document, s = d.createElement('script');
+                                s.src = 'https://ttocsneb-1.disqus.com/embed.js';
+                                s.setAttribute('data-timestamp', +new Date());
+                                (d.head || d.body).appendChild(s);
+                            })();
+                            </script>
+                            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                        </div>
+                                
                 </div>
+                <!--              SideBar           -->
                 <div class="col-sm-4" id="sidebar">
                     <!--                    Featured Carousel                    -->
                     <div class="row">
                         <h4>Featured</h4>
+                        
+                        <!--          Featured Carousel              -->
                         
                         <div id="carousel-featured" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
