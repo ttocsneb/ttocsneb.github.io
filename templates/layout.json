@@ -17,7 +17,19 @@
     {
       "name": "carouselInd",
       "value": "\u003c!--[carouselbuttons]--\u003e"
+    },
+    {
+      "name": "desc",
+      "value": "[Desc]"
+    },
+    {
+      "name": "keywords",
+      "value": "[Keywords]"
+    },
+    {
+      "name": "author",
+      "value": "[Author]"
     }
   ],
-  "hash": 1508216406
+  "hash": 357055086
 }

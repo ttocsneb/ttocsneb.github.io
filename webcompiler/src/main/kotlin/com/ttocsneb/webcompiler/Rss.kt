@@ -93,12 +93,12 @@ class Rss {
 
             val dir = File(it.file)
             val file = File(dir.parentFile.path.replace(config.markdown, config.blog) + "/" + dir.nameWithoutExtension + "/").toString().replace(" ", "%20")
-            val text = it.content.substring(0, Math.min(300, it.content.length)) + "..."
+            //val text = it.content.substring(0, Math.min(300, it.content.length)) + "..."
             val date = SimpleDateFormat("E, d MMM yyyy HH:mm:ss Z").format(Date(it.json.unix))
 
             //println(date)
 
-            tmp += "<item>\n\t<title>${it.json.title}</title>\n\t<link>http://www.ttocsneb.com/$file</link>\n\t<description>${text}</description>\n\t<pubDate>$date</pubDate>\n\t<guid>http://www.ttocsneb.com/$file</guid>\n</item>"
+            tmp += "<item>\n\t<title>${it.json.title}</title>\n\t<link>http://www.ttocsneb.com/$file</link>\n\t<description>${it.json.description}</description>\n\t<pubDate>$date</pubDate>\n\t<guid>http://www.ttocsneb.com/$file</guid>\n</item>"
 
         }
         template = template.replace(content, tmp)
