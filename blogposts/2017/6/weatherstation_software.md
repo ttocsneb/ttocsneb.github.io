@@ -1,13 +1,17 @@
 {
   "title": "WeatherStation: Software",
   "date": "6/17/17",
+  "unix": 1497679200000,
   "hash": 1262110516,
   "files": [
     "flowchart.png",
     "flowchart_web.png",
     "wiring.jpg",
     "wiring_web.jpg"
-  ]
+  ],
+  "description": "I started planning the software structure",
+  "tags": "weather station, software",
+  "author": "Benjamin Jacobs"
 };
 
 I finished wiring the station, though I would not be surprised if I need to make some last minute adjustments.  The last bit of wiring I have done is interfacing with the existing hardware.  The rain gauge and anemometer connect directly to the board with an internal pull-up activated.  The language is connected to D11 for PCINT7 which allows for interrupts.  The weather vane is connected to A0 through a 5k7 resistor to act as a voltage divider with the resistors in the weather vain as the second resistor.  The solar panel connects to the USB pin through a step-up converter to make sure there is a 5V output.

@@ -6,6 +6,12 @@
         <description>A blog containing my personal projects.</description>
         <language>en</language>
         <item>
+	<title>WeatherStation: Software</title>
+	<link>http://www.ttocsneb.com/blog/2017/6/weatherstation_software</link>
+	<description>I started planning the software structure</description>
+	<pubDate>Sat, 17 Jun 2017 00:00:00 -0600</pubDate>
+	<guid>http://www.ttocsneb.com/blog/2017/6/weatherstation_software</guid>
+</item><item>
 	<title>Weather Station Part 2</title>
 	<link>http://www.ttocsneb.com/blog/2017/04/weatherstation%20pt2</link>
 	<description>I have started working on the main board for the station.  Adding the transceiver, barometer, temperature, and humidity sensor.</description>
