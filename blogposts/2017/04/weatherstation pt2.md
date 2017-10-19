@@ -2,13 +2,16 @@
   "title": "Weather Station Part 2",
   "date": "4/15/17",
   "unix": 1492236000000,
-  "hash": -177631935,
+  "hash": 1117642620,
   "files": [
     "chip_top.jpg",
     "chip_top_hd.jpg",
     "chip_wiring.jpg",
     "chip_wiring_hd.jpg"
-  ]
+  ],
+  "description": "I have started working on the main board for the station.  Adding the transceiver, barometer, temperature, and humidity sensor.",
+  "tags": "Weather station, chip, weather vain",
+  "author": "Benjamin Jacobs"
 };
 
 I have started working on the main board for the station.  Adding the transceiver, barometer, temperature, and humidity sensor.  It is going pretty well so far.  I have not yet tested the rf24 module, though the two other modules I have confirmed to work.  The MPL115 works pretty well and seems to give good readings, though I can't really test it without putting it in a vacuum chamber or climb a mountain, which is fairly difficult, let alone try to tether it to a computer.  The humidity sensor reads humid in my mouth, and the temperature sensor senses the proper temperature.
@@ -54,11 +57,11 @@ The last is the weather vain, arguably the most difficult to implement.  There a
   <tr>
     <td>West</td>
     <td>1k</td>
-    <td>infinity</del></td>
+    <td><del>infinity</del></td>
     <td>0V</td>
   </tr>
   <tr>
-    <td>NorthWest</del></td>
+    <td>NorthWest</td>
     <td>2k2</td>
     <td><del>50k1</del></td>
     <td>3.33V</td>

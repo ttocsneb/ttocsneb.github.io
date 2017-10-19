@@ -12,4 +12,7 @@ class JsonMD {
     var unix:Long = 0
     var hash:Int = 0
     var files:Array<String> = emptyArray()
+    val description:String = ""
+    val tags:String = ""
+    val author:String = ""
 }

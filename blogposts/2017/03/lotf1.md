@@ -2,13 +2,16 @@
   "title": "Lord of the Flies 1",
   "date": "3/11/17",
   "unix": 1489215600000,
-  "hash": -604101135,
-  "files": []
+  "hash": -866898060,
+  "files": [],
+  "description": "In English class, we have been reading The Lord of the Flies.  We are assigned to write about how our actions relate to characters in the book. ",
+  "tags": "lord of the flies, ralph, english",
+  "author": "Benjamin Jacobs"
 };
 
 In English class, we have been reading The Lord of the Flies.  We are assigned to write about how our actions relate to characters in the book.  I will be writing about my similarities with a few characters in the book, I will most likely spit up each character into a separate post.  The first character I will write about is Ralph.  
 
-<img src="https://s3.amazonaws.com/s3.timetoast.com/public/uploads/photos/5160772/LOTF_8_large.jpg?1476750272"></img>
+<img src="https://s3.amazonaws.com/s3.timetoast.com/public/uploads/photos/5160772/LOTF_8_large.jpg?1476750272"/>
 
 Ralph is probably my favorite character in the book.  He is one of the saner characters in the story and is a good leader.  At the beginning of the book, the gathered everybody with the magic conch shell and stayed focused on the task at hand, getting rescued.  
 

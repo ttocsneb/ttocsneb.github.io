@@ -22,11 +22,22 @@ import java.text.SimpleDateFormat
  */
 class Blog {
 
+    val BLOG:String = "blog"
+    val CAROUSEL:String = "carousel"
+    val TITLE:String = "title"
+    val CAROUSEL_IND:String = "carouselInd"
+    val DESCRIPTION:String = "desc"
+    val TAGS:String = "keywords"
+    val AUTHOR:String = "author"
+
     var blog:String = ""
     var carousel:String = ""
     var title:String = ""
     var carouselInd:String = ""
     var template:String = ""
+    var description:String = ""
+    var tags:String = ""
+    var author:String = ""
 
     /**
      * Compile the blogs
@@ -49,13 +60,16 @@ class Blog {
         if(t == null) t = JsonTemplate()
         val templateconfig = t
 
-        //load the template
+        //load the template tags
         for(i in templateconfig.items) {
             when(i.name) {
-                "blog" -> blog = i.value
-                "carousel" -> carousel = i.value
-                "title" -> title = i.value
-                "carouselInd" -> carouselInd = i.value
+                BLOG -> blog = i.value
+                CAROUSEL -> carousel = i.value
+                TITLE -> title = i.value
+                CAROUSEL_IND -> carouselInd = i.value
+                DESCRIPTION -> description = i.value
+                TAGS -> tags = i.value
+                AUTHOR -> author = i.value
             }
         }
         template = Main.readFile(File(templateFile).parentFile.path + "/" + templateconfig.file)
@@ -89,90 +103,102 @@ class Blog {
         //Go through each found file, and compile it
         println("Getting files and compiling..")
         for (f in Main.getFiles(config.markdown, "md")) {
-            var cont: List<String> = Main.readFile(f).split("};")
-            //account for an uncreated json, by creating a json with 'null' values
-            if(cont.size == 1) {
-                cont = listOf("{\"title\": \"null\",\"date\":\"null\"", cont[0])
-            }
-            val mdconfig = gson.fromJson(cont[0] + "}", JsonMD::class.java)
-
-
-
-            //Parse the date into a timestamp
-
-            var timestamp:Long = -1
-
-            val formats = Array(3, {""})
-            formats[0] = "MM/dd/yy HH:mm:ss.SSS"
-            formats[1] = "MM/dd/yy HH:mm"
-            formats[2] = "MM/dd/yy"
-
-            for(x in formats) {
-                try {
-                    timestamp = SimpleDateFormat(x).parse(mdconfig.date).time
-                    break
-                } catch (e:ParseException) {
-                    //do nothing..
-                }
-            }
-            if(timestamp.compareTo(-1) == 0) {
-                println("\t\tThere was a problem formatting the date for ${mdconfig.title}")
-            }
-
-
-            //if the file has not changed since last compile, and we are not compiling everything, skip this file
-            if(mdconfig.hash == cont[1].hashCode() && timestamp.compareTo(-1) == 0) {
-                if(!changed)
-                    continue
-            } else {
-                //modify the hash value, and save it to file.
-                mdconfig.hash = cont[1].hashCode()
-                mdconfig.unix = timestamp
-                Main.saveFile(f, gson.toJson(mdconfig) + ";" + cont[1])
-                //if the json was uncreated/invalid, don't compile it, give an error, and skip the file
-                if(mdconfig.title == "null") {
-                    println("\tError: invalid json at: $f\n\t\tCreating Json..\n\t\tSkipping $f")
-                    continue
-                }
-            }
-
-            println("\tCompiling: " + f)
-
-            val dir = File(f)
-            val file = File(dir.parentFile.path.replace(config.markdown, config.blog) + "/" + dir.nameWithoutExtension + "/")
-
-            //create the directory, if it couldn't be created, give an error and skip the file
-            if(!file.mkdirs()) {
-                if(!file.exists()) {
-                    println("\tUnable to create directory: " + file.path)
-                    println("\t\tI'm not sure what happened, maybe a folder in the path is a file :/")
-                    println("\tskipping..")
-                    continue
-                } else {
-                    if(!file.isDirectory) {
-                        println("\tUnable to create directory: " + file.path)
-                        println("\t\tIt is already created as a file!")
-                        println("\tskipping..")
-                        continue
-                    }
-                }
-            }
-
-            //compile the post into html
-            val node = p.parse(cont[1])
-            val post = "<h1>" + mdconfig.title + "</h1>\n<h6>" + mdconfig.date + "</h6>\n" + renderer.render(node)
-            val text = template.replace(blog, post).replace(title, mdconfig.title)
-            Main.saveFile(file.path + "/index.html", text)
-            println("\tCopying files..")
-            mdconfig.files.forEach {
-                println("\t\t$it")
-                Files.copy(File(dir.parentFile.path + "/$it").toPath(), File(file.path + "/$it").toPath(), StandardCopyOption.REPLACE_EXISTING)
-            }
-            println("\tDone Copying files")
+            compileBlog(f, gson, changed, config, p, renderer)
         }
 
         println("Done Compiling Blogs")
 
+    }
+
+    private fun compileBlog(f:String, gson:Gson, changed:Boolean, config: JsonConfig, parser:Parser, renderer:HtmlRenderer) {
+        var cont: List<String> = Main.readFile(f).split("};")
+        //account for an uncreated json, by creating a json with 'null' values
+        if(cont.size == 1) {
+            cont = listOf("{\"title\": \"null\",\"date\":\"null\"", cont[0])
+        }
+        val mdconfig = gson.fromJson(cont[0] + "}", JsonMD::class.java)
+
+
+
+        //Parse the date into a timestamp
+
+        var timestamp:Long = -1
+
+        val formats = Array(3, {""})
+        formats[0] = "MM/dd/yy HH:mm:ss.SSS"
+        formats[1] = "MM/dd/yy HH:mm"
+        formats[2] = "MM/dd/yy"
+
+        for(x in formats) {
+            try {
+                timestamp = SimpleDateFormat(x).parse(mdconfig.date).time
+                break
+            } catch (e:ParseException) {
+                //do nothing..
+            }
+        }
+        if(timestamp.compareTo(-1) == 0) {
+            println("\t\tThere was a problem formatting the date for ${mdconfig.title}")
+        }
+
+
+        //if the file has not changed since last compile, and we are not compiling everything, skip this file
+        if(mdconfig.hash == cont[1].hashCode() && timestamp.compareTo(-1) == 0) {
+            if(!changed)
+                return
+        } else {
+            //modify the hash value, and save it to file.
+            mdconfig.hash = cont[1].hashCode()
+            mdconfig.unix = timestamp
+            Main.saveFile(f, gson.toJson(mdconfig) + ";" + cont[1])
+            //if the json was uncreated/invalid, don't compile it, give an error, and skip the file
+            if(mdconfig.title == "null") {
+                println("\tError: invalid json at: $f\n\t\tCreating Json..\n\t\tSkipping $f")
+                return
+            }
+        }
+
+        println("\tCompiling: " + f)
+
+        val dir = File(f)
+        val file = File(dir.parentFile.path.replace(config.markdown, config.blog) + "/" + dir.nameWithoutExtension + "/")
+
+        //create the directory, if it couldn't be created, give an error and skip the file
+        if(!file.mkdirs()) {
+            if(!file.exists()) {
+                println("\tUnable to create directory: " + file.path)
+                println("\t\tI'm not sure what happened, maybe a folder in the path is a file :/")
+                println("\tskipping..")
+                return
+            } else {
+                if(!file.isDirectory) {
+                    println("\tUnable to create directory: " + file.path)
+                    println("\t\tIt is already created as a file!")
+                    println("\tskipping..")
+                    return
+                }
+            }
+        }
+
+        //compile the post into html
+        val node = parser.parse(cont[1])
+        val post = "<h1>" + mdconfig.title + "</h1>\n<h6>" + mdconfig.date + "</h6>\n" + renderer.render(node)
+
+        //Fill in the tags
+        val text = template
+                .replace(blog, post)
+                .replace(title, mdconfig.title)
+                .replace(description, mdconfig.description)
+                .replace(author, mdconfig.author)
+                .replace(tags, mdconfig.tags)
+
+        Main.saveFile(file.path + "/index.html", text)
+        println("\tCopying files..")
+        mdconfig.files.forEach {
+            println("\t\t$it")
+            Files.copy(File(dir.parentFile.path + "/$it").toPath(), File(file.path + "/$it").toPath(), StandardCopyOption.REPLACE_EXISTING)
+        }
+        println("\tDone Copying files")
     }
 
     /**
