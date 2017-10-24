@@ -6,6 +6,12 @@
         <description>A blog containing my personal projects.</description>
         <language>en</language>
         <item>
+	<title>RC Remote Software</title>
+	<link>http://www.ttocsneb.com/blog/2017/10/remote</link>
+	<description>I am done building my RC Remote and have started developing the software for both the comms library, as well as the remote itself.</description>
+	<pubDate>Tue, 24 Oct 2017 09:00:00 -0600</pubDate>
+	<guid>http://www.ttocsneb.com/blog/2017/10/remote</guid>
+</item><item>
 	<title>WeatherStation: Software</title>
 	<link>http://www.ttocsneb.com/blog/2017/6/weatherstation_software</link>
 	<description>I started planning the software structure</description>
