@@ -16,6 +16,7 @@ import java.nio.file.StandardCopyOption
 import java.sql.Timestamp
 import java.text.ParseException
 import java.text.SimpleDateFormat
+import java.util.*
 
 /**
  * Compile Blog
@@ -182,7 +183,7 @@ class Blog {
 
         //compile the post into html
         val node = parser.parse(cont[1])
-        val post = "<h1>" + mdconfig.title + "</h1>\n<h6>" + mdconfig.date + "</h6>\n" + renderer.render(node)
+        val post = "<h1>" + mdconfig.title + "</h1>\n<h6>" + SimpleDateFormat("MMM d, yyyy").format(Date(mdconfig.unix)) + "</h6>\n" + renderer.render(node)
 
         //Fill in the tags
         val text = template
@@ -217,7 +218,7 @@ class Blog {
             //Create the html code for the carousel
             temp +=  (if (i%3 == 0) ("<div class=\"item" + (if(i==0) " active" else "") + "\">\n") else "") +
                     "\t<div class=\"col-xs-4\">\n\t\t<h5><a href=\"" + file + "\">" + conf.title + "</a></h5>\n\t\t<h6>" +
-                    conf.date + "</h6>\n\t</div>\n" + (if((i+1)%3 == 0) "</div>\n" else "")
+                    SimpleDateFormat("MMM d, yyyy").format(Date(conf.unix)) + "</h6>\n\t</div>\n" + (if((i+1)%3 == 0) "</div>\n" else "")
         }
         //Add the final div to the carousel if it hasn't already been created
         if(config.featured.size%3 != 0) {
