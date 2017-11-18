@@ -1,0 +1,191 @@
+\hypertarget{classRemoteProtocol}{}\section{Remote\+Protocol Class Reference}
+\label{classRemoteProtocol}\index{Remote\+Protocol@{Remote\+Protocol}}
+
+
+{\ttfamily \#include $<$rc\+Remote\+Protocol.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef void() \hyperlink{classRemoteProtocol_ab9e87c74f439c0cadd0823afb1509d55}{save\+Settings}(const uint8\+\_\+t $\ast$id, const uint8\+\_\+t $\ast$settings)
+\item 
+typedef bool() \hyperlink{classRemoteProtocol_a6c79a9aff87a0ef816d49e1eda9a639e}{check\+If\+Valid}(const uint8\+\_\+t $\ast$id, uint8\+\_\+t $\ast$settings)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classRemoteProtocol_ac372a2187a4cdb43443834ad104b92e6}{Remote\+Protocol} (R\+F24 $\ast$tranceiver, const uint8\+\_\+t remote\+Id\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{classRemoteProtocol_ac59aca8e8ce184ea9b46187e92708027}{begin} ()
+\item 
+int8\+\_\+t \hyperlink{classRemoteProtocol_ac35879305b9a753c2b630979e4fb4aee}{pair} (\hyperlink{classRemoteProtocol_ab9e87c74f439c0cadd0823afb1509d55}{save\+Settings} \hyperlink{classRemoteProtocol_ab9e87c74f439c0cadd0823afb1509d55}{save\+Settings})
+\item 
+int8\+\_\+t \hyperlink{classRemoteProtocol_a0948e420ac812906e683fb47041287b8}{connect} (\hyperlink{classRemoteProtocol_a6c79a9aff87a0ef816d49e1eda9a639e}{check\+If\+Valid} \hyperlink{classRemoteProtocol_a6c79a9aff87a0ef816d49e1eda9a639e}{check\+If\+Valid})
+\item 
+int8\+\_\+t \hyperlink{classRemoteProtocol_ad837e6469d792f906551293ce0a9ad71}{update} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Communication Protocol for transmitters 
+
+Definition at line 88 of file rc\+Remote\+Protocol.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classRemoteProtocol_ab9e87c74f439c0cadd0823afb1509d55}\label{classRemoteProtocol_ab9e87c74f439c0cadd0823afb1509d55}} 
+\index{Remote\+Protocol@{Remote\+Protocol}!save\+Settings@{save\+Settings}}
+\index{save\+Settings@{save\+Settings}!Remote\+Protocol@{Remote\+Protocol}}
+\subsubsection{\texorpdfstring{save\+Settings}{saveSettings}}
+{\footnotesize\ttfamily typedef void() Remote\+Protocol\+::save\+Settings(const uint8\+\_\+t $\ast$id, const uint8\+\_\+t $\ast$settings)}
+
+Save settings to non-\/volitile memory, such as E\+E\+P\+R\+OM
+
+The function should save both the id, and settings to some form of non-\/volitile memory. This can be done in any way as long as the data can be retrieved, and checked.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & 5 byte char array containing the ID of the receiver \\
+\hline
+{\em settings} & 32 byte array of settings \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 99 of file rc\+Remote\+Protocol.\+h.
+
+\mbox{\Hypertarget{classRemoteProtocol_a6c79a9aff87a0ef816d49e1eda9a639e}\label{classRemoteProtocol_a6c79a9aff87a0ef816d49e1eda9a639e}} 
+\index{Remote\+Protocol@{Remote\+Protocol}!check\+If\+Valid@{check\+If\+Valid}}
+\index{check\+If\+Valid@{check\+If\+Valid}!Remote\+Protocol@{Remote\+Protocol}}
+\subsubsection{\texorpdfstring{check\+If\+Valid}{checkIfValid}}
+{\footnotesize\ttfamily typedef bool() Remote\+Protocol\+::check\+If\+Valid(const uint8\+\_\+t $\ast$id, uint8\+\_\+t $\ast$settings)}
+
+Check if the given id has been paired, and load the corresponding settings into the settings array.
+
+If the id is not found, the settings should not be changed, and return false.
+
+Here is a heavily simplified example\+: 
+\begin{DoxyCode}
+\textcolor{keywordflow}{if}(findID(\textcolor{keywordtype}{id}) == \textcolor{keyword}{true}) \{
+  loadSettings(settings);
+  \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+\} \textcolor{keywordflow}{else} \{
+  \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+\}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & 5 byte char array containing the ID of the receiver \\
+\hline
+{\em settings} & 32 byte array to be loaded with the settings of the ID\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the check was successful 
+\end{DoxyReturn}
+
+
+Definition at line 121 of file rc\+Remote\+Protocol.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRemoteProtocol_ac372a2187a4cdb43443834ad104b92e6}\label{classRemoteProtocol_ac372a2187a4cdb43443834ad104b92e6}} 
+\index{Remote\+Protocol@{Remote\+Protocol}!Remote\+Protocol@{Remote\+Protocol}}
+\index{Remote\+Protocol@{Remote\+Protocol}!Remote\+Protocol@{Remote\+Protocol}}
+\subsubsection{\texorpdfstring{Remote\+Protocol()}{RemoteProtocol()}}
+{\footnotesize\ttfamily Remote\+Protocol\+::\+Remote\+Protocol (\begin{DoxyParamCaption}\item[{R\+F24 $\ast$}]{tranceiver,  }\item[{const uint8\+\_\+t}]{remote\+Id\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+Constructor
+
+Creates a new instance of the protocol. You create an instance and send a reference to the R\+F24 driver as well as the id of the remote
+
+
+\begin{DoxyParams}{Parameters}
+{\em tranceiver} & A reference to the R\+F24 chip, this allows you to create your own instance, allowing multi-\/platform support \\
+\hline
+{\em remote\+Id} & The 5 byte char array of the remotes ID\+: ex \char`\"{}\+My\+Rmt\char`\"{} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 7 of file rc\+Remote\+Protocol.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classRemoteProtocol_ac59aca8e8ce184ea9b46187e92708027}\label{classRemoteProtocol_ac59aca8e8ce184ea9b46187e92708027}} 
+\index{Remote\+Protocol@{Remote\+Protocol}!begin@{begin}}
+\index{begin@{begin}!Remote\+Protocol@{Remote\+Protocol}}
+\subsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily void Remote\+Protocol\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Begin the Protocol
+
+\begin{DoxyNote}{Note}
+There is no need to begin the R\+F24 driver, as this function does this for you 
+\end{DoxyNote}
+
+
+Definition at line 12 of file rc\+Remote\+Protocol.\+cpp.
+
+\mbox{\Hypertarget{classRemoteProtocol_ac35879305b9a753c2b630979e4fb4aee}\label{classRemoteProtocol_ac35879305b9a753c2b630979e4fb4aee}} 
+\index{Remote\+Protocol@{Remote\+Protocol}!pair@{pair}}
+\index{pair@{pair}!Remote\+Protocol@{Remote\+Protocol}}
+\subsubsection{\texorpdfstring{pair()}{pair()}}
+{\footnotesize\ttfamily int8\+\_\+t Remote\+Protocol\+::pair (\begin{DoxyParamCaption}\item[{\hyperlink{classRemoteProtocol_ab9e87c74f439c0cadd0823afb1509d55}{Remote\+Protocol\+::save\+Settings}}]{save\+Settings }\end{DoxyParamCaption})}
+
+Attempt to pair with a receiver
+
+\begin{DoxyNote}{Note}
+The receiver you are trying to pair with should also be in pair mode
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em save\+Settings} & A function pointer to save the settings of the paired device. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 19 of file rc\+Remote\+Protocol.\+cpp.
+
+\mbox{\Hypertarget{classRemoteProtocol_a0948e420ac812906e683fb47041287b8}\label{classRemoteProtocol_a0948e420ac812906e683fb47041287b8}} 
+\index{Remote\+Protocol@{Remote\+Protocol}!connect@{connect}}
+\index{connect@{connect}!Remote\+Protocol@{Remote\+Protocol}}
+\subsubsection{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily int8\+\_\+t Remote\+Protocol\+::connect (\begin{DoxyParamCaption}\item[{\hyperlink{classRemoteProtocol_a6c79a9aff87a0ef816d49e1eda9a639e}{Remote\+Protocol\+::check\+If\+Valid}}]{check\+If\+Valid }\end{DoxyParamCaption})}
+
+Attempt to connect with a previously paired device
+
+\begin{DoxyNote}{Note}
+The receiver should have already been paired with the remote, and in connect mode
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em check\+If\+Valid} & A function pointer to check if the found device has been paired, and to load the settings \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 69 of file rc\+Remote\+Protocol.\+cpp.
+
+\mbox{\Hypertarget{classRemoteProtocol_ad837e6469d792f906551293ce0a9ad71}\label{classRemoteProtocol_ad837e6469d792f906551293ce0a9ad71}} 
+\index{Remote\+Protocol@{Remote\+Protocol}!update@{update}}
+\index{update@{update}!Remote\+Protocol@{Remote\+Protocol}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily int8\+\_\+t Remote\+Protocol\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Update the communications with the currently connected device
+
+\begin{DoxyNote}{Note}
+We should have already be connected with a device before calling update, see \hyperlink{classRemoteProtocol_a0948e420ac812906e683fb47041287b8}{connect()} 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{rcRemoteProtocol_8h}{rc\+Remote\+Protocol.\+h}\item 
+src/\hyperlink{rcRemoteProtocol_8cpp}{rc\+Remote\+Protocol.\+cpp}\end{DoxyCompactItemize}

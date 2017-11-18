@@ -1,0 +1,210 @@
+\hypertarget{rcRemoteProtocol_8h}{}\section{src/rc\+Remote\+Protocol.h File Reference}
+\label{rcRemoteProtocol_8h}\index{src/rc\+Remote\+Protocol.\+h@{src/rc\+Remote\+Protocol.\+h}}
+{\ttfamily \#include \char`\"{}Arduino.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}R\+F24.\+h\char`\"{}}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classRemoteProtocol}{Remote\+Protocol}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rcRemoteProtocol_8h_ad434474a429a400a76b36167c2883eb0}{R\+C\+\_\+\+T\+I\+M\+E\+O\+UT}~15000
+\item 
+\#define \hyperlink{rcRemoteProtocol_8h_a3d1d5db4e86ad41329ba0cdf29083424}{R\+C\+\_\+\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+I\+M\+E\+O\+UT}~2500
+\item 
+\#define \hyperlink{rcRemoteProtocol_8h_a731ce428ac516139e9956858bb39d35b}{R\+C\+\_\+\+E\+R\+R\+O\+R\+\_\+\+L\+O\+S\+T\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+ON}~-\/1
+\item 
+\#define \hyperlink{rcRemoteProtocol_8h_af92a9c3cdac1e39c59ff0b4bea76b831}{R\+C\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+I\+M\+E\+O\+UT}~-\/2
+\item 
+\#define \hyperlink{rcRemoteProtocol_8h_a8ace11b378f3e28814fc1c089dc4b516}{R\+C\+\_\+\+E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+D\+A\+TA}~-\/3
+\item 
+\#define \hyperlink{rcRemoteProtocol_8h_a8df1c03026ec9963f7cce8fc50d3be72}{S\+E\+T\+\_\+\+B\+O\+O\+LS}~0
+\item 
+\#define \hyperlink{rcRemoteProtocol_8h_a2cd68fa504467f7daad866b1b8f22c89}{S\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+D\+Y\+N\+A\+M\+I\+C\+\_\+\+P\+A\+Y\+L\+O\+AD}(x,  y)~(x==true?(y$\vert$1)\+:(y\&($\sim$1)))
+\item 
+\#define \hyperlink{rcRemoteProtocol_8h_ab3a20cfc30f6764009529e23d4456f90}{G\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+D\+Y\+N\+A\+M\+I\+C\+\_\+\+P\+A\+Y\+L\+O\+AD}(x)~(x\&1)
+\item 
+\#define \hyperlink{rcRemoteProtocol_8h_a1e6c428f01bf5c0d7b612c49b10c36a5}{S\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+A\+CK}(x,  y)~(x==true?(y$\vert$2)\+:(y\&($\sim$2)))
+\item 
+\#define \hyperlink{rcRemoteProtocol_8h_a94b5dc5e83b7bc51cde1b2f16804f95a}{G\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+A\+CK}(x)~((x$>$$>$1)\&1)
+\item 
+\#define \hyperlink{rcRemoteProtocol_8h_ae50220169f4d32260774c6bd75b6ff28}{S\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+A\+C\+K\+\_\+\+P\+A\+Y\+L\+O\+AD}(x,  y)~(x==true?(y$\vert$4)\+:(y\&($\sim$4)))
+\item 
+\#define \hyperlink{rcRemoteProtocol_8h_a39a870e165c8f974be70e08b26d68692}{G\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+A\+C\+K\+\_\+\+P\+A\+Y\+L\+O\+AD}(x)~((x$>$$>$2)\&1)
+\item 
+\#define \hyperlink{rcRemoteProtocol_8h_ab2fae91f17b7784c7e4972cfd724b354}{S\+E\+T\+\_\+\+S\+T\+A\+R\+T\+\_\+\+C\+H\+A\+N\+N\+EL}~1
+\item 
+\#define \hyperlink{rcRemoteProtocol_8h_ac6de89e493279010a109ceed6c6f3871}{S\+E\+T\+\_\+\+D\+A\+T\+A\+\_\+\+R\+A\+TE}~2
+\item 
+\#define \hyperlink{rcRemoteProtocol_8h_ae6560705106c8d3734d92962da705b0a}{S\+E\+T\+\_\+\+P\+A\+Y\+L\+O\+A\+D\+\_\+\+S\+I\+ZE}~3
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{rcRemoteProtocol_8h_ad434474a429a400a76b36167c2883eb0}\label{rcRemoteProtocol_8h_ad434474a429a400a76b36167c2883eb0}} 
+\index{rc\+Remote\+Protocol.\+h@{rc\+Remote\+Protocol.\+h}!R\+C\+\_\+\+T\+I\+M\+E\+O\+UT@{R\+C\+\_\+\+T\+I\+M\+E\+O\+UT}}
+\index{R\+C\+\_\+\+T\+I\+M\+E\+O\+UT@{R\+C\+\_\+\+T\+I\+M\+E\+O\+UT}!rc\+Remote\+Protocol.\+h@{rc\+Remote\+Protocol.\+h}}
+\subsubsection{\texorpdfstring{R\+C\+\_\+\+T\+I\+M\+E\+O\+UT}{RC\_TIMEOUT}}
+{\footnotesize\ttfamily \#define R\+C\+\_\+\+T\+I\+M\+E\+O\+UT~15000}
+
+
+
+Definition at line 20 of file rc\+Remote\+Protocol.\+h.
+
+\mbox{\Hypertarget{rcRemoteProtocol_8h_a3d1d5db4e86ad41329ba0cdf29083424}\label{rcRemoteProtocol_8h_a3d1d5db4e86ad41329ba0cdf29083424}} 
+\index{rc\+Remote\+Protocol.\+h@{rc\+Remote\+Protocol.\+h}!R\+C\+\_\+\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+I\+M\+E\+O\+UT@{R\+C\+\_\+\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+I\+M\+E\+O\+UT}}
+\index{R\+C\+\_\+\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+I\+M\+E\+O\+UT@{R\+C\+\_\+\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+I\+M\+E\+O\+UT}!rc\+Remote\+Protocol.\+h@{rc\+Remote\+Protocol.\+h}}
+\subsubsection{\texorpdfstring{R\+C\+\_\+\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+I\+M\+E\+O\+UT}{RC\_CONNECT\_TIMEOUT}}
+{\footnotesize\ttfamily \#define R\+C\+\_\+\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+I\+M\+E\+O\+UT~2500}
+
+
+
+Definition at line 24 of file rc\+Remote\+Protocol.\+h.
+
+\mbox{\Hypertarget{rcRemoteProtocol_8h_a731ce428ac516139e9956858bb39d35b}\label{rcRemoteProtocol_8h_a731ce428ac516139e9956858bb39d35b}} 
+\index{rc\+Remote\+Protocol.\+h@{rc\+Remote\+Protocol.\+h}!R\+C\+\_\+\+E\+R\+R\+O\+R\+\_\+\+L\+O\+S\+T\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+ON@{R\+C\+\_\+\+E\+R\+R\+O\+R\+\_\+\+L\+O\+S\+T\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+ON}}
+\index{R\+C\+\_\+\+E\+R\+R\+O\+R\+\_\+\+L\+O\+S\+T\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+ON@{R\+C\+\_\+\+E\+R\+R\+O\+R\+\_\+\+L\+O\+S\+T\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+ON}!rc\+Remote\+Protocol.\+h@{rc\+Remote\+Protocol.\+h}}
+\subsubsection{\texorpdfstring{R\+C\+\_\+\+E\+R\+R\+O\+R\+\_\+\+L\+O\+S\+T\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+ON}{RC\_ERROR\_LOST\_CONNECTION}}
+{\footnotesize\ttfamily \#define R\+C\+\_\+\+E\+R\+R\+O\+R\+\_\+\+L\+O\+S\+T\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+ON~-\/1}
+
+Communications have been established, but since lost it 
+
+Definition at line 32 of file rc\+Remote\+Protocol.\+h.
+
+\mbox{\Hypertarget{rcRemoteProtocol_8h_af92a9c3cdac1e39c59ff0b4bea76b831}\label{rcRemoteProtocol_8h_af92a9c3cdac1e39c59ff0b4bea76b831}} 
+\index{rc\+Remote\+Protocol.\+h@{rc\+Remote\+Protocol.\+h}!R\+C\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+I\+M\+E\+O\+UT@{R\+C\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+I\+M\+E\+O\+UT}}
+\index{R\+C\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+I\+M\+E\+O\+UT@{R\+C\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+I\+M\+E\+O\+UT}!rc\+Remote\+Protocol.\+h@{rc\+Remote\+Protocol.\+h}}
+\subsubsection{\texorpdfstring{R\+C\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+I\+M\+E\+O\+UT}{RC\_ERROR\_TIMEOUT}}
+{\footnotesize\ttfamily \#define R\+C\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+I\+M\+E\+O\+UT~-\/2}
+
+No connection has been made 
+
+Definition at line 36 of file rc\+Remote\+Protocol.\+h.
+
+\mbox{\Hypertarget{rcRemoteProtocol_8h_a8ace11b378f3e28814fc1c089dc4b516}\label{rcRemoteProtocol_8h_a8ace11b378f3e28814fc1c089dc4b516}} 
+\index{rc\+Remote\+Protocol.\+h@{rc\+Remote\+Protocol.\+h}!R\+C\+\_\+\+E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+D\+A\+TA@{R\+C\+\_\+\+E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+D\+A\+TA}}
+\index{R\+C\+\_\+\+E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+D\+A\+TA@{R\+C\+\_\+\+E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+D\+A\+TA}!rc\+Remote\+Protocol.\+h@{rc\+Remote\+Protocol.\+h}}
+\subsubsection{\texorpdfstring{R\+C\+\_\+\+E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+D\+A\+TA}{RC\_ERROR\_BAD\_DATA}}
+{\footnotesize\ttfamily \#define R\+C\+\_\+\+E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+D\+A\+TA~-\/3}
+
+Data that was received does not match expectations 
+
+Definition at line 40 of file rc\+Remote\+Protocol.\+h.
+
+\mbox{\Hypertarget{rcRemoteProtocol_8h_a8df1c03026ec9963f7cce8fc50d3be72}\label{rcRemoteProtocol_8h_a8df1c03026ec9963f7cce8fc50d3be72}} 
+\index{rc\+Remote\+Protocol.\+h@{rc\+Remote\+Protocol.\+h}!S\+E\+T\+\_\+\+B\+O\+O\+LS@{S\+E\+T\+\_\+\+B\+O\+O\+LS}}
+\index{S\+E\+T\+\_\+\+B\+O\+O\+LS@{S\+E\+T\+\_\+\+B\+O\+O\+LS}!rc\+Remote\+Protocol.\+h@{rc\+Remote\+Protocol.\+h}}
+\subsubsection{\texorpdfstring{S\+E\+T\+\_\+\+B\+O\+O\+LS}{SET\_BOOLS}}
+{\footnotesize\ttfamily \#define S\+E\+T\+\_\+\+B\+O\+O\+LS~0}
+
+Settings positions
+
+The settings have a specific structure to them, these definitions are used to organize them S\+E\+T\+\_\+\+B\+O\+O\+LS
+
+The first byte of settings contain several booleans\+:
+\begin{DoxyItemize}
+\item E\+N\+A\+B\+L\+E\+\_\+\+D\+Y\+N\+A\+M\+I\+C\+\_\+\+P\+A\+Y\+L\+O\+AD
+\item E\+N\+A\+B\+L\+E\+\_\+\+A\+CK
+\item E\+N\+A\+B\+L\+E\+\_\+\+A\+C\+K\+\_\+\+P\+A\+Y\+L\+O\+AD 
+\end{DoxyItemize}
+
+Definition at line 58 of file rc\+Remote\+Protocol.\+h.
+
+\mbox{\Hypertarget{rcRemoteProtocol_8h_a2cd68fa504467f7daad866b1b8f22c89}\label{rcRemoteProtocol_8h_a2cd68fa504467f7daad866b1b8f22c89}} 
+\index{rc\+Remote\+Protocol.\+h@{rc\+Remote\+Protocol.\+h}!S\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+D\+Y\+N\+A\+M\+I\+C\+\_\+\+P\+A\+Y\+L\+O\+AD@{S\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+D\+Y\+N\+A\+M\+I\+C\+\_\+\+P\+A\+Y\+L\+O\+AD}}
+\index{S\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+D\+Y\+N\+A\+M\+I\+C\+\_\+\+P\+A\+Y\+L\+O\+AD@{S\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+D\+Y\+N\+A\+M\+I\+C\+\_\+\+P\+A\+Y\+L\+O\+AD}!rc\+Remote\+Protocol.\+h@{rc\+Remote\+Protocol.\+h}}
+\subsubsection{\texorpdfstring{S\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+D\+Y\+N\+A\+M\+I\+C\+\_\+\+P\+A\+Y\+L\+O\+AD}{SET\_ENABLE\_DYNAMIC\_PAYLOAD}}
+{\footnotesize\ttfamily \#define S\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+D\+Y\+N\+A\+M\+I\+C\+\_\+\+P\+A\+Y\+L\+O\+AD(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{y }\end{DoxyParamCaption})~(x==true?(y$\vert$1)\+:(y\&($\sim$1)))}
+
+
+
+Definition at line 59 of file rc\+Remote\+Protocol.\+h.
+
+\mbox{\Hypertarget{rcRemoteProtocol_8h_ab3a20cfc30f6764009529e23d4456f90}\label{rcRemoteProtocol_8h_ab3a20cfc30f6764009529e23d4456f90}} 
+\index{rc\+Remote\+Protocol.\+h@{rc\+Remote\+Protocol.\+h}!G\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+D\+Y\+N\+A\+M\+I\+C\+\_\+\+P\+A\+Y\+L\+O\+AD@{G\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+D\+Y\+N\+A\+M\+I\+C\+\_\+\+P\+A\+Y\+L\+O\+AD}}
+\index{G\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+D\+Y\+N\+A\+M\+I\+C\+\_\+\+P\+A\+Y\+L\+O\+AD@{G\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+D\+Y\+N\+A\+M\+I\+C\+\_\+\+P\+A\+Y\+L\+O\+AD}!rc\+Remote\+Protocol.\+h@{rc\+Remote\+Protocol.\+h}}
+\subsubsection{\texorpdfstring{G\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+D\+Y\+N\+A\+M\+I\+C\+\_\+\+P\+A\+Y\+L\+O\+AD}{GET\_ENABLE\_DYNAMIC\_PAYLOAD}}
+{\footnotesize\ttfamily \#define G\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+D\+Y\+N\+A\+M\+I\+C\+\_\+\+P\+A\+Y\+L\+O\+AD(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(x\&1)}
+
+
+
+Definition at line 60 of file rc\+Remote\+Protocol.\+h.
+
+\mbox{\Hypertarget{rcRemoteProtocol_8h_a1e6c428f01bf5c0d7b612c49b10c36a5}\label{rcRemoteProtocol_8h_a1e6c428f01bf5c0d7b612c49b10c36a5}} 
+\index{rc\+Remote\+Protocol.\+h@{rc\+Remote\+Protocol.\+h}!S\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+A\+CK@{S\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+A\+CK}}
+\index{S\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+A\+CK@{S\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+A\+CK}!rc\+Remote\+Protocol.\+h@{rc\+Remote\+Protocol.\+h}}
+\subsubsection{\texorpdfstring{S\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+A\+CK}{SET\_ENABLE\_ACK}}
+{\footnotesize\ttfamily \#define S\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+A\+CK(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{y }\end{DoxyParamCaption})~(x==true?(y$\vert$2)\+:(y\&($\sim$2)))}
+
+
+
+Definition at line 61 of file rc\+Remote\+Protocol.\+h.
+
+\mbox{\Hypertarget{rcRemoteProtocol_8h_a94b5dc5e83b7bc51cde1b2f16804f95a}\label{rcRemoteProtocol_8h_a94b5dc5e83b7bc51cde1b2f16804f95a}} 
+\index{rc\+Remote\+Protocol.\+h@{rc\+Remote\+Protocol.\+h}!G\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+A\+CK@{G\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+A\+CK}}
+\index{G\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+A\+CK@{G\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+A\+CK}!rc\+Remote\+Protocol.\+h@{rc\+Remote\+Protocol.\+h}}
+\subsubsection{\texorpdfstring{G\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+A\+CK}{GET\_ENABLE\_ACK}}
+{\footnotesize\ttfamily \#define G\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+A\+CK(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~((x$>$$>$1)\&1)}
+
+
+
+Definition at line 62 of file rc\+Remote\+Protocol.\+h.
+
+\mbox{\Hypertarget{rcRemoteProtocol_8h_ae50220169f4d32260774c6bd75b6ff28}\label{rcRemoteProtocol_8h_ae50220169f4d32260774c6bd75b6ff28}} 
+\index{rc\+Remote\+Protocol.\+h@{rc\+Remote\+Protocol.\+h}!S\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+A\+C\+K\+\_\+\+P\+A\+Y\+L\+O\+AD@{S\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+A\+C\+K\+\_\+\+P\+A\+Y\+L\+O\+AD}}
+\index{S\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+A\+C\+K\+\_\+\+P\+A\+Y\+L\+O\+AD@{S\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+A\+C\+K\+\_\+\+P\+A\+Y\+L\+O\+AD}!rc\+Remote\+Protocol.\+h@{rc\+Remote\+Protocol.\+h}}
+\subsubsection{\texorpdfstring{S\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+A\+C\+K\+\_\+\+P\+A\+Y\+L\+O\+AD}{SET\_ENABLE\_ACK\_PAYLOAD}}
+{\footnotesize\ttfamily \#define S\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+A\+C\+K\+\_\+\+P\+A\+Y\+L\+O\+AD(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{y }\end{DoxyParamCaption})~(x==true?(y$\vert$4)\+:(y\&($\sim$4)))}
+
+
+
+Definition at line 63 of file rc\+Remote\+Protocol.\+h.
+
+\mbox{\Hypertarget{rcRemoteProtocol_8h_a39a870e165c8f974be70e08b26d68692}\label{rcRemoteProtocol_8h_a39a870e165c8f974be70e08b26d68692}} 
+\index{rc\+Remote\+Protocol.\+h@{rc\+Remote\+Protocol.\+h}!G\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+A\+C\+K\+\_\+\+P\+A\+Y\+L\+O\+AD@{G\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+A\+C\+K\+\_\+\+P\+A\+Y\+L\+O\+AD}}
+\index{G\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+A\+C\+K\+\_\+\+P\+A\+Y\+L\+O\+AD@{G\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+A\+C\+K\+\_\+\+P\+A\+Y\+L\+O\+AD}!rc\+Remote\+Protocol.\+h@{rc\+Remote\+Protocol.\+h}}
+\subsubsection{\texorpdfstring{G\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+A\+C\+K\+\_\+\+P\+A\+Y\+L\+O\+AD}{GET\_ENABLE\_ACK\_PAYLOAD}}
+{\footnotesize\ttfamily \#define G\+E\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+A\+C\+K\+\_\+\+P\+A\+Y\+L\+O\+AD(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~((x$>$$>$2)\&1)}
+
+
+
+Definition at line 64 of file rc\+Remote\+Protocol.\+h.
+
+\mbox{\Hypertarget{rcRemoteProtocol_8h_ab2fae91f17b7784c7e4972cfd724b354}\label{rcRemoteProtocol_8h_ab2fae91f17b7784c7e4972cfd724b354}} 
+\index{rc\+Remote\+Protocol.\+h@{rc\+Remote\+Protocol.\+h}!S\+E\+T\+\_\+\+S\+T\+A\+R\+T\+\_\+\+C\+H\+A\+N\+N\+EL@{S\+E\+T\+\_\+\+S\+T\+A\+R\+T\+\_\+\+C\+H\+A\+N\+N\+EL}}
+\index{S\+E\+T\+\_\+\+S\+T\+A\+R\+T\+\_\+\+C\+H\+A\+N\+N\+EL@{S\+E\+T\+\_\+\+S\+T\+A\+R\+T\+\_\+\+C\+H\+A\+N\+N\+EL}!rc\+Remote\+Protocol.\+h@{rc\+Remote\+Protocol.\+h}}
+\subsubsection{\texorpdfstring{S\+E\+T\+\_\+\+S\+T\+A\+R\+T\+\_\+\+C\+H\+A\+N\+N\+EL}{SET\_START\_CHANNEL}}
+{\footnotesize\ttfamily \#define S\+E\+T\+\_\+\+S\+T\+A\+R\+T\+\_\+\+C\+H\+A\+N\+N\+EL~1}
+
+S\+E\+T\+\_\+\+S\+T\+A\+R\+T\+\_\+\+C\+H\+A\+N\+N\+EL
+
+The starting channel, a number between 0 and 127 
+
+Definition at line 71 of file rc\+Remote\+Protocol.\+h.
+
+\mbox{\Hypertarget{rcRemoteProtocol_8h_ac6de89e493279010a109ceed6c6f3871}\label{rcRemoteProtocol_8h_ac6de89e493279010a109ceed6c6f3871}} 
+\index{rc\+Remote\+Protocol.\+h@{rc\+Remote\+Protocol.\+h}!S\+E\+T\+\_\+\+D\+A\+T\+A\+\_\+\+R\+A\+TE@{S\+E\+T\+\_\+\+D\+A\+T\+A\+\_\+\+R\+A\+TE}}
+\index{S\+E\+T\+\_\+\+D\+A\+T\+A\+\_\+\+R\+A\+TE@{S\+E\+T\+\_\+\+D\+A\+T\+A\+\_\+\+R\+A\+TE}!rc\+Remote\+Protocol.\+h@{rc\+Remote\+Protocol.\+h}}
+\subsubsection{\texorpdfstring{S\+E\+T\+\_\+\+D\+A\+T\+A\+\_\+\+R\+A\+TE}{SET\_DATA\_RATE}}
+{\footnotesize\ttfamily \#define S\+E\+T\+\_\+\+D\+A\+T\+A\+\_\+\+R\+A\+TE~2}
+
+S\+E\+T\+\_\+\+D\+A\+T\+A\+\_\+\+R\+A\+TE
+
+The Data rate, using enum values from rf24\+\_\+datarate\+\_\+e 
+
+Definition at line 77 of file rc\+Remote\+Protocol.\+h.
+
+\mbox{\Hypertarget{rcRemoteProtocol_8h_ae6560705106c8d3734d92962da705b0a}\label{rcRemoteProtocol_8h_ae6560705106c8d3734d92962da705b0a}} 
+\index{rc\+Remote\+Protocol.\+h@{rc\+Remote\+Protocol.\+h}!S\+E\+T\+\_\+\+P\+A\+Y\+L\+O\+A\+D\+\_\+\+S\+I\+ZE@{S\+E\+T\+\_\+\+P\+A\+Y\+L\+O\+A\+D\+\_\+\+S\+I\+ZE}}
+\index{S\+E\+T\+\_\+\+P\+A\+Y\+L\+O\+A\+D\+\_\+\+S\+I\+ZE@{S\+E\+T\+\_\+\+P\+A\+Y\+L\+O\+A\+D\+\_\+\+S\+I\+ZE}!rc\+Remote\+Protocol.\+h@{rc\+Remote\+Protocol.\+h}}
+\subsubsection{\texorpdfstring{S\+E\+T\+\_\+\+P\+A\+Y\+L\+O\+A\+D\+\_\+\+S\+I\+ZE}{SET\_PAYLOAD\_SIZE}}
+{\footnotesize\ttfamily \#define S\+E\+T\+\_\+\+P\+A\+Y\+L\+O\+A\+D\+\_\+\+S\+I\+ZE~3}
+
+S\+E\+T\+\_\+\+P\+A\+Y\+L\+O\+A\+D\+\_\+\+S\+I\+ZE
+
+The size of the payload usually 32 or less 
+
+Definition at line 83 of file rc\+Remote\+Protocol.\+h.
+
