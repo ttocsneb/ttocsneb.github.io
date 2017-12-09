@@ -86,7 +86,7 @@ class Blog {
 
 
         //pre-compile the template
-        template = precompile(config, gson, template)
+        template = Main.preCompile(config, templateConfig, gson, template)
 
 
         //Setup the Markdown processor
@@ -208,47 +208,5 @@ class Blog {
             Files.copy(File(dir.parentFile.path + "/$it").toPath(), File(f.path + "/$it").toPath(), StandardCopyOption.REPLACE_EXISTING)
         }
         println("\tDone Copying files")
-    }
-
-    /**
-     * Compile the template with anything that would apply to the entire website
-     *
-     * @param config Global Config
-     * @param gson Gson Parser
-     * @param template Template to compile
-     *
-     * @return A precompiled template for every blog page.
-     */
-    private fun precompile(config: JsonConfig, gson: Gson, template:String):String {
-        var temp = ""
-        var t = template
-        //compile the Featured bar into the template
-        for(i in config.featured.indices) {
-            val conf = gson.fromJson(Main.readFile(config.markdown + "/" + config.featured[i]).split("};")[0]+"}", JsonMD::class.java)
-            val f = File(config.markdown + "/" + config.featured[i])
-            //get the link to the featured post
-            val file = "\\" + f.parentFile.path.replace(config.markdown, config.blog) + "\\" + f.nameWithoutExtension + "\\"
-
-            //Create the html code for the carousel
-            temp +=  (if (i%3 == 0) ("<div class=\"item" + (if(i==0) " active" else "") + "\">\n") else "") +
-                    "\t<div class=\"col-xs-4\">\n\t\t<h5><a href=\"" + file + "\">" + conf.title + "</a></h5>\n\t\t<h6>" +
-                    SimpleDateFormat("MMM d, yyyy").format(Date(conf.unix)) + "</h6>\n\t</div>\n" + (if((i+1)%3 == 0) "</div>\n" else "")
-        }
-        //Add the final div to the carousel if it hasn't already been created
-        if(config.featured.size%3 != 0) {
-            temp += "</div>\n"
-        }
-        //Add the carousel content to the template
-        t = t.replace(carousel, temp)
-
-        //create the proper number of carousel button things for the template
-        temp = ""
-        var i=0
-        while(i< Math.ceil(config.featured.size / 3.0)) {
-            temp += "<li data-target=\"#carousel-featured\" data-slide-to=\"$i\"" + (if(i == 0)" class=\"active\"" else "") +"></li>\n"
-            i++
-        }
-        t = t.replace(carouselInd, temp)
-        return t
     }
 }

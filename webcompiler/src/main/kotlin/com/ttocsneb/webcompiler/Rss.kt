@@ -5,11 +5,6 @@ import com.google.gson.GsonBuilder
 import com.ttocsneb.webcompiler.json.JsonConfig
 import com.ttocsneb.webcompiler.json.JsonMD
 import com.ttocsneb.webcompiler.json.JsonTemplate
-import com.vladsch.flexmark.html.HtmlRenderer
-import com.vladsch.flexmark.parser.Parser
-import com.vladsch.flexmark.parser.ParserEmulationProfile
-import com.vladsch.flexmark.util.options.MutableDataHolder
-import com.vladsch.flexmark.util.options.MutableDataSet
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
@@ -26,27 +21,31 @@ class Rss {
     var template:String = ""
     var content:String = ""
 
+    /**
+     * Compile the rss file
+     *
+     * @param args Program arguments
+     * @param config Global Configuration
+     */
     fun compile(args: Main.Args, config: JsonConfig) {
         println("Compiling RSS..")
         val gson: Gson = GsonBuilder().setPrettyPrinting().create()
 
         //Load the template for the mainpage
-        for(f in Main.getFiles(config.template, "json")) {
-            val tmp = gson.fromJson(Main.readFile(f), JsonTemplate::class.java)
-            if(tmp.template == "rss") {
-                templatecfg = tmp
-                cfgfile = f
-            }
-        }
+        cfgfile = Main.getTemplate(config.template, "rss", gson)!!
+        templatecfg = gson.fromJson(Main.readFile(cfgfile), JsonTemplate::class.java)
+        template = Main.readFile(File(cfgfile).parentFile.path + "/" + templatecfg.file)
 
+
+        //Load template tags
         templatecfg.items.forEach {
             when(it.name) {
                 "content" -> content = it.value
             }
         }
 
-        template = Main.readFile(File(cfgfile).parentFile.path + "/" + templatecfg.file)
 
+        //Check if the template has changed
         if(template.hashCode() != templatecfg.hash || args.loadAll) {
             if(template.hashCode() != templatecfg.hash)println("Template has changed")
 
@@ -54,8 +53,10 @@ class Rss {
             Main.saveFile(cfgfile, gson.toJson(templatecfg))
         }
 
-        val mditems:Array<MainPage.mditem> = Array(5, { MainPage.mditem() })
+        //Create an array for 5 items
+        val mditems:Array<MainPage.MdItem> = Array(4, { MainPage.MdItem() })
 
+        //Order the posts from the newest 5 posts
         for(f in Main.getFiles(config.markdown, "md")) {
             //parse the md file
             var cont: List<String> = Main.readFile(f).split("};")
@@ -64,6 +65,7 @@ class Rss {
             }
             val mdcfg = gson.fromJson(cont[0] + "}", JsonMD::class.java)
 
+            //Get the order in relation to the other ordered posts
             var i = mditems.size - 1
             var element = -1
             while (i >= 0) {
@@ -71,13 +73,14 @@ class Rss {
                     element = i
                 i--
             }
+            //If the post is in the top 5, put it in the array
             if (element != -1) {
                 i = mditems.size - 1
                 while (i > element) {
                     mditems[i] = mditems[i - 1]
                     i--
                 }
-                val md = MainPage.mditem()
+                val md = MainPage.MdItem()
                 md.json = mdcfg
                 md.file = f
                 md.content = cont[1]
@@ -87,6 +90,7 @@ class Rss {
 
         var tmp = ""
 
+        //Compile the posts into the rss xml file
         mditems.forEach {
             if(it.file == "")return@forEach
 
@@ -96,15 +100,11 @@ class Rss {
             //val text = it.content.substring(0, Math.min(300, it.content.length)) + "..."
             val date = SimpleDateFormat("E, d MMM yyyy HH:mm:ss Z").format(Date(it.json.unix))
 
-            //println(date)
-
             tmp += "<item>\n\t<title>${it.json.title}</title>\n\t<link>http://www.ttocsneb.com/$file</link>\n\t<description>${it.json.description}</description>\n\t<pubDate>$date</pubDate>\n\t<guid>http://www.ttocsneb.com/$file</guid>\n</item>"
 
         }
         template = template.replace(content, tmp)
         Main.saveFile(location, template)
         println(template)
-
-
     }
 }
