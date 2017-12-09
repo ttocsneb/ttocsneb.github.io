@@ -85,6 +85,9 @@ class Main {
             val main = MainPage()
             main.compile(arg, config)
 
+            val projects = Projects()
+            projects.compile(arg, config)
+
             //Compile the RSS
             val rss = Rss()
             rss.compile(arg, config)

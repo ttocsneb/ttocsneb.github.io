@@ -9,6 +9,7 @@ class JsonConfig {
     val featured:List<String> = emptyList()
     val template:String = ""//the location of the template file
     val markdown:String = ""//the location of the .md posts
+    val projects:String = ""//the location of the projects
     val blog:String = ""//the location of the html posts
 
     var featuredhash:Int = 0

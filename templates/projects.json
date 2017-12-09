@@ -3,8 +3,8 @@
   "template": "projects",
   "items": [
     {
-      "name": "projects",
-      "value": "\u003c!--[Projects]--\u003e"
+      "name": "project",
+      "value": "<!--[Projects]-->"
     },
     {
       "name": "carousel",
