@@ -1,0 +1,22 @@
+{
+  "file": "projects.html",
+  "template": "projects",
+  "items": [
+    {
+      "name": "projects",
+      "value": "\u003c!--[Projects]--\u003e"
+    },
+    {
+      "name": "carousel",
+      "value": "\u003c!--[Carousel]--\u003e"
+    },
+    {
+      "name": "carouselInd",
+      "value": "\u003c!--[carouselbuttons]--\u003e"
+    },
+    {
+      "name": "file",
+      "value": "projects/index.html"
+    }
+  ]
+}
