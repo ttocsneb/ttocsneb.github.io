@@ -105,6 +105,5 @@ class Rss {
         }
         template = template.replace(content, tmp)
         Main.saveFile(location, template)
-        println(template)
     }
 }
