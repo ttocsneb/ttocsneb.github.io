@@ -26,8 +26,8 @@ class Rss {
     var template:String = ""
     var content:String = ""
 
-    fun compile(args: Main.args, config: JsonConfig) {
-        println("Compiling MainPage..")
+    fun compile(args: Main.Args, config: JsonConfig) {
+        println("Compiling RSS..")
         val gson: Gson = GsonBuilder().setPrettyPrinting().create()
 
         //Load the template for the mainpage

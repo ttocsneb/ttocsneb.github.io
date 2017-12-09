@@ -27,7 +27,7 @@ class MainPage {
     var templatecfg:JsonTemplate = JsonTemplate()
     var templatefile:String = ""
 
-    fun compile(args: Main.args, config: JsonConfig) {
+    fun compile(args: Main.Args, config: JsonConfig) {
         println("Compiling MainPage..")
         val gson: Gson = GsonBuilder().setPrettyPrinting().create()
 
