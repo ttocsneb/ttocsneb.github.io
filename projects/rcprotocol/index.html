@@ -76,7 +76,29 @@
                 <div class="col-sm-8">
                     <!--            Main Content               -->
                     <h1>rcProtocol</h1>
-<p>Hello World!</p>
+<p><a href="https://github.com/ttocsneb/rcProtocol">github</a></p>
+<p><a href="http://www.ttocsneb.com/projects/rcprotocol/docs/html/annotated.html">documentation</a></p>
+<h3>About<a name="about"></a></h3>
+<p>rcProtocol is a communications protocol I designed for remote-control systems.  It is completely digital, and uses the <a href="https://arduino-info.wikispaces.com/Nrf24L01-2.4GHz-HowTo">RF24L01</a> radio module (specifically the <a href="https://github.com/nRF24/RF24">tmrh20 RF24</a> library).  The protocol will support two way communications, receiver specific settings, multiple paired receivers, up to 10 channels per packet (12 bit precision), and possibly channel-hopping.</p>
+<h3>How does it work<a name="how-does-it-work"></a></h3>
+<p>rcProtocol manages pairs and connects, which mean that any receiver that uses rcProtcol can pair with any remote that supports rcProtcol.</p>
+<h4>Pairing<a name="pairing"></a></h4>
+<ol>
+<li>Transmitter sends its ID; Receiver saves the ID</li>
+<li>switch modes</li>
+<li>Receiver sends its ID</li>
+<li>Reciever sends its settings; Transmitter saves the ID and settings</li>
+</ol>
+<p>When the pair command is called, the program will hold until a receiver/transmitter is found, or the program times out.  There are several things that need to happen when pairing.  The receiver needs to get the transmitter's ID;  This allows the receiver to know what channel to broadcast on when connecting.  The transmitter will also get the receiver's ID so that it can organize device specific settings.  Then the transmitter will get the settings which will be saved for when they connect.</p>
+<h4>Connecting<a name="connecting"></a></h4>
+<ol>
+<li>Receiver sends its ID</li>
+<li>switch modes</li>
+<li>Transmitter sends ok/not ok</li>
+<li>load settings</li>
+<li>test settings</li>
+</ol>
+<p>The connect command also holds until a connection is made or has timed out.  The receiver sends its ID to the transmitter, this is done because the transmitter doesn't know which device will try to connect with it.  The transmitter will then check to see if the receiver is saved.  If the receiver is found, the transmitter will send an ok.  Then both devices will load the settings, and test to see if the settings are properly set.</p>
 
                     <div class="row" id="disqusdiv">
                         <div id="disqus_thread"></div>
