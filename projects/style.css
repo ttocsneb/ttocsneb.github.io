@@ -1,0 +1,15 @@
+
+.project-item > a > img {
+    /*width: 100%;*/
+    border-radius: 5px;
+}
+
+.project-item {
+    text-align: center;
+    padding-bottom: 1.5em;
+}
+
+.project-item > a {
+    font-family: inherit !important;
+    font-size: 1.5em;
+}
