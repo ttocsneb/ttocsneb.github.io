@@ -97,15 +97,15 @@ img {
 }
 
 .container a {
-    font-family: monospace;
-    font-weight: 700;
-    color: white;
+    color: lightcyan;
 }
 
-a:hover {
-    color: lightgrey;
-    /*font-weight: bold;*/
-    text-decoration: none;
+.container a:visited {
+    color: lightblue;
+}
+
+.container a:hover {
+    color: lightgray;
 }
 
 .jumbotron {
