@@ -14,13 +14,13 @@ import java.util.*
  */
 class MainPage {
 
-    var blogs:String = ""
-    var carousel:String = ""
-    var carouselInd:String = ""
-    var template:String = ""
-    var file:String = ""
-    var templatecfg:JsonTemplate = JsonTemplate()
-    var templatefile:String = ""
+    private var blogs:String = ""
+    private var carousel:String = ""
+    private var carouselInd:String = ""
+    private var template:String = ""
+    private var file:String = ""
+    private var templatecfg:JsonTemplate = JsonTemplate()
+    private var templatefile:String = ""
 
     /**
      * Compile the Main Page

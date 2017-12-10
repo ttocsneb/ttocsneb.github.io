@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>rcProtocol</title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Benjamin Jacobs">
+        <meta name="description" content="A communication protocol for Remote-Control things.  It is open-source, so allows you to create your own remotes/receivers that support it.">
+        <meta name="keywords" content="rcprotocol, rc, remote, receiver">
+        
+        
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+        <link rel="stylesheet" href="/style.css"/> <!-- put StyleSheet Here -->
+        
+        <!-- Google Analytics -->
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                                    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            
+            ga('create', 'UA-56094841-1', 'auto');
+            ga('send', 'pageview');
+
+        </script>   
+
+        <!-- Google Adsense FullPage Ads -->
+        
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({
+                google_ad_client: "ca-pub-8120696301066168",
+                enable_page_level_ads: true
+            });
+        </script>
+        
+    </head>
+    <body>
+        
+        <!--          NavBar              -->
+        
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynav">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">TtocsNeb</a>
+                </div>
+                <div class="collapse navbar-collapse" id="mynav">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/projects/">Projects</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+        </nav>
+        
+        <!--         Canvas                -->
+        
+        <div class="container">
+            <div id="spacer"></div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <!--            Main Content               -->
+                    <h1>rcProtocol</h1>
+<p><a href="https://github.com/ttocsneb/rcProtocol">github</a></p>
+<p><a href="http://www.ttocsneb.com/projects/rcprotocol/docs/html/annotated.html">documentation</a></p>
+<h3>About<a name="about"></a></h3>
+<p>rcProtocol is a communications protocol I designed for remote-control systems.  It is completely digital, and uses the <a href="https://arduino-info.wikispaces.com/Nrf24L01-2.4GHz-HowTo">RF24L01</a> radio module (specifically the <a href="https://github.com/nRF24/RF24">tmrh20 RF24</a> library).  The protocol will support two way communications, receiver specific settings, multiple paired receivers, up to 10 channels per packet (12 bit precision), and possibly channel-hopping.</p>
+<h3>How does it work<a name="how-does-it-work"></a></h3>
+<p>rcProtocol manages pairs and connects, which mean that any receiver that uses rcProtcol can pair with any remote that supports rcProtcol.</p>
+<h4>Pairing<a name="pairing"></a></h4>
+<ol>
+<li>Transmitter sends its ID; Receiver saves the ID</li>
+<li>switch modes</li>
+<li>Receiver sends its ID</li>
+<li>Reciever sends its settings; Transmitter saves the ID and settings</li>
+</ol>
+<p>When the pair command is called, the program will hold until a receiver/transmitter is found, or the program times out.  There are several things that need to happen when pairing.  The receiver needs to get the transmitter's ID;  This allows the receiver to know what channel to broadcast on when connecting.  The transmitter will also get the receiver's ID so that it can organize device specific settings.  Then the transmitter will get the settings which will be saved for when they connect.</p>
+<h4>Connecting<a name="connecting"></a></h4>
+<ol>
+<li>Receiver sends its ID</li>
+<li>switch modes</li>
+<li>Transmitter sends ok/not ok</li>
+<li>load settings</li>
+<li>test settings</li>
+</ol>
+<p>The connect command also holds until a connection is made or has timed out.  The receiver sends its ID to the transmitter, this is done because the transmitter doesn't know which device will try to connect with it.  The transmitter will then check to see if the receiver is saved.  If the receiver is found, the transmitter will send an ok.  Then both devices will load the settings, and test to see if the settings are properly set.</p>
+
+                    <div class="row" id="disqusdiv">
+                        <div id="disqus_thread"></div>
+                        <script>
+                            
+                            /**
+                            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                            /*
+                            var disqus_config = function () {
+                            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                            };
+                            */
+                            (function() { // DON'T EDIT BELOW THIS LINE
+                                var d = document, s = d.createElement('script');
+                                s.src = 'https://ttocsneb-1.disqus.com/embed.js';
+                                s.setAttribute('data-timestamp', +new Date());
+                                (d.head || d.body).appendChild(s);
+                            })();
+                            </script>
+                            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                        </div>
+                                
+                </div>
+                <!--              SideBar           -->
+                <div class="col-sm-4" id="sidebar">
+                    <!--                    Featured Carousel                    -->
+                    <div class="row">
+                        <h4>Featured</h4>
+                        
+                        <!--          Featured Carousel              -->
+                        
+                        <div id="carousel-featured" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+								<!--		Carousel buttons		-->
+								<li data-target="#carousel-featured" data-slide-to="0" class="active"></li>
+<li data-target="#carousel-featured" data-slide-to="1"></li>
+
+                            </ol>
+                            <div class="carousel-inner">
+								<!--		Carousel content		-->
+                                <div class="item active">
+	<div class="col-xs-4">
+		<h5><a href="\blog\2017\6\weatherstation_software\">WeatherStation: Software</a></h5>
+		<h6>Jun 17, 2017</h6>
+	</div>
+	<div class="col-xs-4">
+		<h5><a href="\blog\2017\04\weatherstation pt2\">Weather Station Part 2</a></h5>
+		<h6>Apr 15, 2017</h6>
+	</div>
+	<div class="col-xs-4">
+		<h5><a href="\blog\2017\04\weatherstation\">Weather Station</a></h5>
+		<h6>Apr 2, 2017</h6>
+	</div>
+</div>
+<div class="item">
+	<div class="col-xs-4">
+		<h5><a href="\blog\2017\03\lotf1\">Lord of the Flies 1</a></h5>
+		<h6>Mar 11, 2017</h6>
+	</div>
+</div>
+
+                            </div>
+                            <a class="left carousel-control" href="#carousel-featured" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-featured" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                            
+                            <div class="row" id="spacer-50px"></div>
+                        </div>
+                    </div>
+                    <!--              Twitter Feed              -->
+                    <div class="row" id="twitter-container">
+                        <a class="twitter-timeline" href="https://twitter.com/TtocsNeb" data-widget-id="683131836873093120">Tweets by @TtocsNeb</a>
+                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                    </div>
+                    <div class="row" id="ad">
+                        <div>
+                            <!-- Adsense -->
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                            <!-- blog sidebar -->
+                            <ins class="adsbygoogle"
+                                 style="display:inline-block;width:300px;height:250px"
+                                 data-ad-client="ca-pub-8120696301066168"
+                                data-ad-slot="4363047938"></ins>
+                            <script>
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
