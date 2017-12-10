@@ -25,6 +25,11 @@ class Projects {
      * @param config Global Configuration
      */
     fun compile(args: Main.Args, config: JsonConfig) {
+
+        val p = ProjectPages()
+
+        p.compile(args, config)
+
         println("Compileing Project Page")
 
         val gson: Gson = GsonBuilder().setPrettyPrinting().create()
@@ -77,7 +82,7 @@ class Projects {
             }
             i++
         }
-        if(i % 3 != 2) {
+        if((i-1) % 3 != 2) {
             projectHtml += "</div>\n"
         }
 
