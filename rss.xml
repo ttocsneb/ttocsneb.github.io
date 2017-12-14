@@ -6,29 +6,29 @@
         <description>A blog containing my personal projects.</description>
         <language>en</language>
         <item>
+	<title>RC Remote API: Pairing/Connecting</title>
+	<link>http://www.ttocsneb.com/blog/2017/10/remote_api_pair_connect</link>
+	<description></description>
+	<pubDate>Sun, 29 Oct 2017 10:37:00 -0600</pubDate>
+	<guid>http://www.ttocsneb.com/blog/2017/10/remote_api_pair_connect</guid>
+</item><item>
 	<title>RC Remote Software</title>
-	<link>http://www.ttocsneb.com/blog\2017\10\remote</link>
+	<link>http://www.ttocsneb.com/blog/2017/10/remote</link>
 	<description>I am done building my RC Remote and have started developing the software for both the comms library, as well as the remote itself.</description>
 	<pubDate>Tue, 24 Oct 2017 09:00:00 -0600</pubDate>
-	<guid>http://www.ttocsneb.com/blog\2017\10\remote</guid>
+	<guid>http://www.ttocsneb.com/blog/2017/10/remote</guid>
 </item><item>
 	<title>WeatherStation: Software</title>
-	<link>http://www.ttocsneb.com/blog\2017\6\weatherstation_software</link>
+	<link>http://www.ttocsneb.com/blog/2017/6/weatherstation_software</link>
 	<description>I started planning the software structure</description>
 	<pubDate>Sat, 17 Jun 2017 00:00:00 -0600</pubDate>
-	<guid>http://www.ttocsneb.com/blog\2017\6\weatherstation_software</guid>
+	<guid>http://www.ttocsneb.com/blog/2017/6/weatherstation_software</guid>
 </item><item>
 	<title>Weather Station Part 2</title>
-	<link>http://www.ttocsneb.com/blog\2017\04\weatherstation%20pt2</link>
+	<link>http://www.ttocsneb.com/blog/2017/04/weatherstation%20pt2</link>
 	<description>I have started working on the main board for the station.  Adding the transceiver, barometer, temperature, and humidity sensor.</description>
 	<pubDate>Sat, 15 Apr 2017 00:00:00 -0600</pubDate>
-	<guid>http://www.ttocsneb.com/blog\2017\04\weatherstation%20pt2</guid>
-</item><item>
-	<title>Weather Station</title>
-	<link>http://www.ttocsneb.com/blog\2017\04\weatherstation</link>
-	<description>I am starting a weather station project, taking an old broken weather station, and getting it to work with Arduino and a Raspberry Pi web server.</description>
-	<pubDate>Sun, 2 Apr 2017 00:00:00 -0600</pubDate>
-	<guid>http://www.ttocsneb.com/blog\2017\04\weatherstation</guid>
+	<guid>http://www.ttocsneb.com/blog/2017/04/weatherstation%20pt2</guid>
 </item>
     </channel>
 </rss>

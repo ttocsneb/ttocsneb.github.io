@@ -73,9 +73,11 @@ img {
 }
 .carousel-control.left span {
 	padding-top: 15px;
+    color: white;
 }
 .carousel-control.right span {
 	padding-top: 15px;
+    color: white;
 }
 
 .carousel-control.left span:hover,
@@ -97,15 +99,15 @@ img {
 }
 
 .container a {
-    color: lightcyan;
+    color: darkseagreen;
 }
 
 .container a:visited {
-    color: lightblue;
+    color: skyblue;
 }
 
 .container a:hover {
-    color: lightgray;
+    color: darkgray;
 }
 
 .jumbotron {

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>WeatherStation: Software</title>
+        <title>RC Remote API: Pairing/Connecting</title>
         
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Benjamin Jacobs">
-        <meta name="description" content="I started planning the software structure">
-        <meta name="keywords" content="weather station, software">
+        <meta name="description" content="">
+        <meta name="keywords" content="rc, remote, software, api">
         
         
         <!-- Latest compiled and minified CSS -->
@@ -75,22 +75,17 @@
             <div class="row">
                 <div class="col-sm-8">
                     <!--            Main Content               -->
-                    <h1>WeatherStation: Software</h1>
-<h6>Jun 17, 2017</h6>
-<p>I finished wiring the station, though I would not be surprised if I need to make some last minute adjustments.  The last bit of wiring I have done is interfacing with the existing hardware.  The rain gauge and anemometer connect directly to the board with an internal pull-up activated.  The language is connected to D11 for PCINT7 which allows for interrupts.  The weather vane is connected to A0 through a 5k7 resistor to act as a voltage divider with the resistors in the weather vain as the second resistor.  The solar panel connects to the USB pin through a step-up converter to make sure there is a 5V output.</p>
-<p>
-  <a href="wiring.jpg" target="_blank"><img src="wiring_web.jpg" width="100%" title="View original"></a>
-</p>
-<p>As for the software, I created a simple flowchart of what the station will do.</p>
-<p>
-  <a href="flowchart.png" target="_blank"><img src="flowchart_web.png" width="100%" title="View original"></a>
-</p>
-<p>The Program will wait for commands, I expect to update once every 30 seconds.  It will then process the command, then repeat.  It is a very simple system. though will be slightly more complex than that.</p>
-<p>I haven't programmed the commands yet, rather got or getting the processes ready to be commanded. So far have had weatherdump mostly finished, as well as settingdump.  They are not yet functional enough to be plugged into a communications API, but the framework is there.</p>
-<h4>WeatherDump</h4>
-<p>The weatherdump sends back all of the weather data from about the time the dump was requested.  It should start out collecting the wind data as that takes at least 2 seconds.  Everything else reads fairly quickly.  Next is the weather vain, which just finds which of the eight reed switches are closed.  The temperature and humidity come from the DHT22, and pressure comes from the MPL115.  The grain count is stored in a variable that may or may not reset after each reading(I haven't decided yet)</p>
-<h4>SettingDump</h4>
-<p>All of the settings are stored in the internal EEPROM.  The settings are fairly simple, just conversions or other various settings regarding weather data.  I am doing this so that if I find an error with my system, I can easily fix the small issues without having to take down the weather station and reflash it.  I am mainly storing Integers, doubles, and booleans. As EEPROM stores its values as bytes and has no conversion systems, I have created a few converters.  The first converter simplifies the booleans into bytes to conserve memory.  The second converts Integers into two bytes.  The third converts doubles into 5 bytes.  It starts out by finding out how many bits the double needs to become a long.  After that, the long is turned into 2 ints which are then saved using the previous writeInt command.  The last 5th byte stores the number of bits the double is compressed by.</p>
+                    <h1>RC Remote API: Pairing/Connecting</h1>
+<h6>Oct 29, 2017</h6>
+<h3>I started writing this in October, and forgot about it until now, whoops.</h3>
+<p>I was able to get progress on the api for my remote.  It can now successfully pair, and connect.  I still have yet to send a steady stream of data; That will be my next goal.</p>
+<h2>Pairing</h2>
+<p>In order to pair, both the receiver, and transmitter must call the <code>pair</code> function.  The remote will start announcing its ID on the <code>PAIR0</code> channel, the receiver will be listening on that channel for any data.</p>
+<p>When data is received, the receiver will save the ID, switch to write mode on the received channel and send settings (currently that only consists of its ID).  The  transmitter will know that data was received, as auto-ack is turned on, and switch to receive mode, waiting for settings.  When settings are received, it will pass them on to the remotes firmware to save.</p>
+<h2>Connecting</h2>
+<p>When connecting, The receiver will go into write mode, announcing its ID on the remote ID channel saved from pairing.  The transmitter will be listening on its channel. When it gets a transmission, it check if the ID sent was saved.</p>
+<p>If any of the Saved IDs matches the sent ID, the transmitter will send back an OK, if not, it will send a FAIL, and will not connect to the receiver.</p>
+<p>Right now, nothing happens after that.  I will have both devices set a value that the device was connected, and which device it was connected to.  This should allow the transmitter to know if it is okay to send data freely.</p>
 
                     <div class="row" id="disqusdiv">
                         <div id="disqus_thread"></div>

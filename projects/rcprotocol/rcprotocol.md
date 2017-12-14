@@ -3,7 +3,7 @@
   "title": "rcProtocol",
   "description": "A communication protocol for Remote-Control things.  It is open-source, so allows you to create your own remotes/receivers that support it.",
   "tags": "rcprotocol, rc, remote, receiver",
-  "hash": 1740749392
+  "hash": -1929498170
 };
 
 [github](https://github.com/ttocsneb/rcProtocol)
