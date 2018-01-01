@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pair',['pair',['../classDeviceProtocol.html#aed6d598d72c46cfbc99cb9f8bcb301f7',1,'DeviceProtocol::pair()'],['../classRemoteProtocol.html#ac35879305b9a753c2b630979e4fb4aee',1,'RemoteProtocol::pair()']]]
+  ['deviceprotocol',['DeviceProtocol',['../classDeviceProtocol.html#aab81f811050405c0bc4b2c1e6b77f2b1',1,'DeviceProtocol']]]
 ];

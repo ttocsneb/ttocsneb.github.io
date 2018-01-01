@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">rcProtocol
-   &#160;<span id="projectnumber">V.0.1.0</span>
+   &#160;<span id="projectnumber">V.0.2.1</span>
    </div>
    <div id="projectbrief">A protocol for diy transmitters/receivers</div>
   </td>
@@ -70,6 +70,17 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="rcDeviceProtocol_8h_source.html">rcDeviceProtocol.h</a>&gt;</code></p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for DeviceProtocol:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+ <div class="center">
+  <img src="classDeviceProtocol.png" usemap="#DeviceProtocol_map" alt=""/>
+  <map id="DeviceProtocol_map" name="DeviceProtocol_map">
+<area href="classRCGlobal.html" alt="RCGlobal" shape="rect" coords="0,0,99,24"/>
+</map>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -80,19 +91,21 @@ Public Types</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aab81f811050405c0bc4b2c1e6b77f2b1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeviceProtocol.html#aab81f811050405c0bc4b2c1e6b77f2b1">DeviceProtocol</a> (RF24 *tranceiver, const uint8_t deviceId[])</td></tr>
 <tr class="separator:aab81f811050405c0bc4b2c1e6b77f2b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aabea2ff004b2ae58be66ed675a0cf7b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeviceProtocol.html#aabea2ff004b2ae58be66ed675a0cf7b8">begin</a> (const uint8_t *settings)</td></tr>
-<tr class="separator:aabea2ff004b2ae58be66ed675a0cf7b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78ee16439248ac681272017861d04f61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeviceProtocol.html#a78ee16439248ac681272017861d04f61">begin</a> (<a class="el" href="classRCSettings.html">RCSettings</a> *settings)</td></tr>
+<tr class="separator:a78ee16439248ac681272017861d04f61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed6d598d72c46cfbc99cb9f8bcb301f7"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeviceProtocol.html#aed6d598d72c46cfbc99cb9f8bcb301f7">pair</a> (<a class="el" href="classDeviceProtocol.html#a1d33bbf35f5c6e7bb888eb06fc50c070">saveRemoteID</a> <a class="el" href="classDeviceProtocol.html#a1d33bbf35f5c6e7bb888eb06fc50c070">saveRemoteID</a>)</td></tr>
 <tr class="separator:aed6d598d72c46cfbc99cb9f8bcb301f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0850a49dfc2a98c34e40a8f4be1ae6cc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeviceProtocol.html#a0850a49dfc2a98c34e40a8f4be1ae6cc">isConnected</a> ()</td></tr>
+<tr class="separator:a0850a49dfc2a98c34e40a8f4be1ae6cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a099b7b72a19262ab5ff19a41c9ce0a9e"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeviceProtocol.html#a099b7b72a19262ab5ff19a41c9ce0a9e">connect</a> (uint8_t remoteId[])</td></tr>
 <tr class="separator:a099b7b72a19262ab5ff19a41c9ce0a9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac08e4aca1a8265b1a3fe2182252ed812"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeviceProtocol.html#ac08e4aca1a8265b1a3fe2182252ed812">update</a> ()</td></tr>
-<tr class="separator:ac08e4aca1a8265b1a3fe2182252ed812"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19501f2313a78c880f6293ebbc09fdfa"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeviceProtocol.html#a19501f2313a78c880f6293ebbc09fdfa">update</a> (uint16_t channels[], uint8_t telemetry[])</td></tr>
+<tr class="separator:a19501f2313a78c880f6293ebbc09fdfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Communication Protocol for receivers </p>
 
-<p class="definition">Definition at line <a class="el" href="rcDeviceProtocol_8h_source.html#l00091">91</a> of file <a class="el" href="rcDeviceProtocol_8h_source.html">rcDeviceProtocol.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rcDeviceProtocol_8h_source.html#l00027">27</a> of file <a class="el" href="rcDeviceProtocol_8h_source.html">rcDeviceProtocol.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a1d33bbf35f5c6e7bb888eb06fc50c070"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1d33bbf35f5c6e7bb888eb06fc50c070">&#9670;&nbsp;</a></span>saveRemoteID</h2>
@@ -114,7 +127,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="rcDeviceProtocol_8h_source.html#l00102">102</a> of file <a class="el" href="rcDeviceProtocol_8h_source.html">rcDeviceProtocol.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rcDeviceProtocol_8h_source.html#l00038">38</a> of file <a class="el" href="rcDeviceProtocol_8h_source.html">rcDeviceProtocol.h</a>.</p>
 
 </div>
 </div>
@@ -149,7 +162,7 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">tranceiver</td><td>A reference to the RF24 chip, this allows you to create your own instance, allowing multi-platform support </td></tr>
-    <tr><td class="paramname">remoteId</td><td>The 5 byte char array of the receiver's ID: ex "MyRcr" </td></tr>
+    <tr><td class="paramname">deviceId</td><td>The 5 byte char array of the receiver's ID: ex "MyRcr" </td></tr>
   </table>
   </dd>
 </dl>
@@ -159,8 +172,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aabea2ff004b2ae58be66ed675a0cf7b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aabea2ff004b2ae58be66ed675a0cf7b8">&#9670;&nbsp;</a></span>begin()</h2>
+<a id="a78ee16439248ac681272017861d04f61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78ee16439248ac681272017861d04f61">&#9670;&nbsp;</a></span>begin()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -168,24 +181,22 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void DeviceProtocol::begin </td>
           <td>(</td>
-          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramtype"><a class="el" href="classRCSettings.html">RCSettings</a> *&#160;</td>
           <td class="paramname"><em>settings</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Begin the Protocol</p>
-<dl class="section note"><dt>Note</dt><dd>There is no need to begin the RF24 driver, as this function does this for you</dd>
-<dd>
-when creating the settings use the definitions at line 46 of this file for help</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>There is no need to begin the RF24 driver, as this function already does this for you</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">settings</td><td>32 byte array of settings </td></tr>
+    <tr><td class="paramname">settings</td><td><a class="el" href="classRCSettings.html">RCSettings</a> </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="rcDeviceProtocol_8cpp_source.html#l00011">11</a> of file <a class="el" href="rcDeviceProtocol_8cpp_source.html">rcDeviceProtocol.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rcDeviceProtocol_8cpp_source.html#l00018">18</a> of file <a class="el" href="rcDeviceProtocol_8cpp_source.html">rcDeviceProtocol.cpp</a>.</p>
 
 </div>
 </div>
@@ -208,12 +219,38 @@ when creating the settings use the definitions at line 46 of this file for help<
 <dl class="section note"><dt>Note</dt><dd>The transmitter you are trying to pair with should also be in pair mode</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">saveRemoteID</td><td>A function pointer to save the id of the transmitter. </td></tr>
+    <tr><td class="paramname">saveRemoteID</td><td>A function pointer to save the id of the transmitter.</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if successful </dd>
+<dd>
+<a class="el" href="rcGlobal_8h.html#af92a9c3cdac1e39c59ff0b4bea76b831">RC_ERROR_TIMEOUT</a> if no transmitter was found. </dd>
+<dd>
+<a class="el" href="rcGlobal_8h.html#a731ce428ac516139e9956858bb39d35b">RC_ERROR_LOST_CONNECTION</a> if transmitter stopped replying </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="rcDeviceProtocol_8cpp_source.html#l00020">20</a> of file <a class="el" href="rcDeviceProtocol_8cpp_source.html">rcDeviceProtocol.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rcDeviceProtocol_8cpp_source.html#l00025">25</a> of file <a class="el" href="rcDeviceProtocol_8cpp_source.html">rcDeviceProtocol.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a0850a49dfc2a98c34e40a8f4be1ae6cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0850a49dfc2a98c34e40a8f4be1ae6cc">&#9670;&nbsp;</a></span>isConnected()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DeviceProtocol::isConnected </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Check if the receiver is connected with a transmitter.</p>
+<dl class="section return"><dt>Returns</dt><dd>true when connected. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="rcDeviceProtocol_8cpp_source.html#l00191">191</a> of file <a class="el" href="rcDeviceProtocol_8cpp_source.html">rcDeviceProtocol.cpp</a>.</p>
 
 </div>
 </div>
@@ -236,17 +273,26 @@ when creating the settings use the definitions at line 46 of this file for help<
 <dl class="section note"><dt>Note</dt><dd>The transmitter you are trying to connect with should also be in connect mode, as well as paired with this device</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">remoteId</td><td>a 5 byte char array of the remote you are trying to pair with, this should come from <a class="el" href="classDeviceProtocol.html#a1d33bbf35f5c6e7bb888eb06fc50c070">DeviceProtocol::saveRemoteID</a> </td></tr>
+    <tr><td class="paramname">remoteId</td><td>a 5 byte char array of the remote you are trying to pair with, this should come from <a class="el" href="classDeviceProtocol.html#a1d33bbf35f5c6e7bb888eb06fc50c070">DeviceProtocol::saveRemoteID</a></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if successful </dd>
+<dd>
+<a class="el" href="rcGlobal_8h.html#af92a9c3cdac1e39c59ff0b4bea76b831">RC_ERROR_TIMEOUT</a> if no transmitter was found </dd>
+<dd>
+<a class="el" href="rcGlobal_8h.html#a731ce428ac516139e9956858bb39d35b">RC_ERROR_LOST_CONNECTION</a> if transmitter stopped replying </dd>
+<dd>
+<a class="el" href="rcGlobal_8h.html#a553492d75e659619528b25c13060ab65">RC_ERROR_CONNECTION_REFUSED</a> if the transmitter refused to connect </dd>
+<dd>
+<a class="el" href="rcGlobal_8h.html#a8ace11b378f3e28814fc1c089dc4b516">RC_ERROR_BAD_DATA</a> if the settings are not properly set, or the transmitter sent unexpected data </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="rcDeviceProtocol_8cpp_source.html#l00065">65</a> of file <a class="el" href="rcDeviceProtocol_8cpp_source.html">rcDeviceProtocol.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rcDeviceProtocol_8cpp_source.html#l00079">79</a> of file <a class="el" href="rcDeviceProtocol_8cpp_source.html">rcDeviceProtocol.cpp</a>.</p>
 
 </div>
 </div>
-<a id="ac08e4aca1a8265b1a3fe2182252ed812"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac08e4aca1a8265b1a3fe2182252ed812">&#9670;&nbsp;</a></span>update()</h2>
+<a id="a19501f2313a78c880f6293ebbc09fdfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19501f2313a78c880f6293ebbc09fdfa">&#9670;&nbsp;</a></span>update()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -254,15 +300,38 @@ when creating the settings use the definitions at line 46 of this file for help<
         <tr>
           <td class="memname">int8_t DeviceProtocol::update </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>channels</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>telemetry</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Update the communications with the currently connected device</p>
-<dl class="section note"><dt>Note</dt><dd>We should have already be connected with a device before calling update, see <a class="el" href="classDeviceProtocol.html#a099b7b72a19262ab5ff19a41c9ce0a9e">connect()</a> </dd></dl>
+<p>If there was a packet sent, it will process it.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">channels</td><td><a class="el" href="classRCSettings.html#a651a8388732483ad29b1fdf03ab066f3">RCSettings.setNumChannels()</a> size array that is set when a standard packet is received. </td></tr>
+    <tr><td class="paramname">telemetry</td><td><a class="el" href="classRCSettings.html#a11ad2922d2de9e69711ad643bdd7db3b">RCSettings.setPayloadSize()</a> size array of telemetry data to send to the transmitter</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if channels were updated </dd>
+<dd>
+0 if nothing happened </dd>
+<dd>
+<a class="el" href="rcGlobal_8h.html#a20eddd07f1bb69f53a6ee7645eece37a">RC_ERROR_NOT_CONNECTED</a> if not connected </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="rcDeviceProtocol_8cpp_source.html#l00136">136</a> of file <a class="el" href="rcDeviceProtocol_8cpp_source.html">rcDeviceProtocol.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rcDeviceProtocol_8cpp_source.html#l00221">221</a> of file <a class="el" href="rcDeviceProtocol_8cpp_source.html">rcDeviceProtocol.cpp</a>.</p>
 
 </div>
 </div>
@@ -273,7 +342,7 @@ when creating the settings use the definitions at line 46 of this file for help<
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Nov 18 2017 13:27:02 for rcProtocol by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jan 1 2018 16:03:30 for rcProtocol by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

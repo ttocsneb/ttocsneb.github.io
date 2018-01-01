@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">rcProtocol
-   &#160;<span id="projectnumber">V.0.1.0</span>
+   &#160;<span id="projectnumber">V.0.2.1</span>
    </div>
    <div id="projectbrief">A protocol for diy transmitters/receivers</div>
   </td>
@@ -70,6 +70,17 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="rcRemoteProtocol_8h_source.html">rcRemoteProtocol.h</a>&gt;</code></p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for RemoteProtocol:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+ <div class="center">
+  <img src="classRemoteProtocol.png" usemap="#RemoteProtocol_map" alt=""/>
+  <map id="RemoteProtocol_map" name="RemoteProtocol_map">
+<area href="classRCGlobal.html" alt="RCGlobal" shape="rect" coords="0,0,100,24"/>
+</map>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -88,13 +99,15 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac35879305b9a753c2b630979e4fb4aee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0948e420ac812906e683fb47041287b8"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRemoteProtocol.html#a0948e420ac812906e683fb47041287b8">connect</a> (<a class="el" href="classRemoteProtocol.html#a6c79a9aff87a0ef816d49e1eda9a639e">checkIfValid</a> <a class="el" href="classRemoteProtocol.html#a6c79a9aff87a0ef816d49e1eda9a639e">checkIfValid</a>)</td></tr>
 <tr class="separator:a0948e420ac812906e683fb47041287b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad837e6469d792f906551293ce0a9ad71"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRemoteProtocol.html#ad837e6469d792f906551293ce0a9ad71">update</a> ()</td></tr>
-<tr class="separator:ad837e6469d792f906551293ce0a9ad71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d174ef72f32cb005f7e0d217cad5320"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRemoteProtocol.html#a4d174ef72f32cb005f7e0d217cad5320">isConnected</a> ()</td></tr>
+<tr class="separator:a4d174ef72f32cb005f7e0d217cad5320"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe891a9762ba2f3efc1897b0376f93bf"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRemoteProtocol.html#abe891a9762ba2f3efc1897b0376f93bf">update</a> (uint16_t channels[], uint8_t telemetry[])</td></tr>
+<tr class="separator:abe891a9762ba2f3efc1897b0376f93bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Communication Protocol for transmitters </p>
 
-<p class="definition">Definition at line <a class="el" href="rcRemoteProtocol_8h_source.html#l00088">88</a> of file <a class="el" href="rcRemoteProtocol_8h_source.html">rcRemoteProtocol.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rcRemoteProtocol_8h_source.html#l00039">39</a> of file <a class="el" href="rcRemoteProtocol_8h_source.html">rcRemoteProtocol.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ab9e87c74f439c0cadd0823afb1509d55"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab9e87c74f439c0cadd0823afb1509d55">&#9670;&nbsp;</a></span>saveSettings</h2>
@@ -117,7 +130,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="rcRemoteProtocol_8h_source.html#l00099">99</a> of file <a class="el" href="rcRemoteProtocol_8h_source.html">rcRemoteProtocol.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rcRemoteProtocol_8h_source.html#l00050">50</a> of file <a class="el" href="rcRemoteProtocol_8h_source.html">rcRemoteProtocol.h</a>.</p>
 
 </div>
 </div>
@@ -143,7 +156,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the check was successful </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="rcRemoteProtocol_8h_source.html#l00121">121</a> of file <a class="el" href="rcRemoteProtocol_8h_source.html">rcRemoteProtocol.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rcRemoteProtocol_8h_source.html#l00072">72</a> of file <a class="el" href="rcRemoteProtocol_8h_source.html">rcRemoteProtocol.h</a>.</p>
 
 </div>
 </div>
@@ -205,7 +218,7 @@ Public Member Functions</h2></td></tr>
 <p>Begin the Protocol</p>
 <dl class="section note"><dt>Note</dt><dd>There is no need to begin the RF24 driver, as this function does this for you </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="rcRemoteProtocol_8cpp_source.html#l00012">12</a> of file <a class="el" href="rcRemoteProtocol_8cpp_source.html">rcRemoteProtocol.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rcRemoteProtocol_8cpp_source.html#l00021">21</a> of file <a class="el" href="rcRemoteProtocol_8cpp_source.html">rcRemoteProtocol.cpp</a>.</p>
 
 </div>
 </div>
@@ -228,12 +241,17 @@ Public Member Functions</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>The receiver you are trying to pair with should also be in pair mode</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">saveSettings</td><td>A function pointer to save the settings of the paired device. </td></tr>
+    <tr><td class="paramname">saveSettings</td><td>A function pointer to save the settings of the paired device.</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if successful </dd>
+<dd>
+<a class="el" href="rcGlobal_8h.html#af92a9c3cdac1e39c59ff0b4bea76b831">RC_ERROR_TIMEOUT</a> if no receiver was found. </dd>
+<dd>
+<a class="el" href="rcGlobal_8h.html#a731ce428ac516139e9956858bb39d35b">RC_ERROR_LOST_CONNECTION</a> if receiver stoped replying </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="rcRemoteProtocol_8cpp_source.html#l00019">19</a> of file <a class="el" href="rcRemoteProtocol_8cpp_source.html">rcRemoteProtocol.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rcRemoteProtocol_8cpp_source.html#l00028">28</a> of file <a class="el" href="rcRemoteProtocol_8cpp_source.html">rcRemoteProtocol.cpp</a>.</p>
 
 </div>
 </div>
@@ -256,17 +274,47 @@ Public Member Functions</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>The receiver should have already been paired with the remote, and in connect mode</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">checkIfValid</td><td>A function pointer to check if the found device has been paired, and to load the settings </td></tr>
+    <tr><td class="paramname">checkIfValid</td><td>A function pointer to check if the found device has been paired, and to load the settings</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if successful </dd>
+<dd>
+<a class="el" href="rcGlobal_8h.html#af92a9c3cdac1e39c59ff0b4bea76b831">RC_ERROR_TIMEOUT</a> if no receiver was found. </dd>
+<dd>
+<a class="el" href="rcGlobal_8h.html#a731ce428ac516139e9956858bb39d35b">RC_ERROR_LOST_CONNECTION</a> if receiver stopped replying </dd>
+<dd>
+<a class="el" href="rcGlobal_8h.html#a553492d75e659619528b25c13060ab65">RC_ERROR_CONNECTION_REFUSED</a> if the receiver is not on the pair list. </dd>
+<dd>
+<a class="el" href="rcGlobal_8h.html#a8ace11b378f3e28814fc1c089dc4b516">RC_ERROR_BAD_DATA</a> if the settings are not set properly on both devices </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="rcRemoteProtocol_8cpp_source.html#l00069">69</a> of file <a class="el" href="rcRemoteProtocol_8cpp_source.html">rcRemoteProtocol.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rcRemoteProtocol_8cpp_source.html#l00076">76</a> of file <a class="el" href="rcRemoteProtocol_8cpp_source.html">rcRemoteProtocol.cpp</a>.</p>
 
 </div>
 </div>
-<a id="ad837e6469d792f906551293ce0a9ad71"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad837e6469d792f906551293ce0a9ad71">&#9670;&nbsp;</a></span>update()</h2>
+<a id="a4d174ef72f32cb005f7e0d217cad5320"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d174ef72f32cb005f7e0d217cad5320">&#9670;&nbsp;</a></span>isConnected()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RemoteProtocol::isConnected </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Check if the transmitter is connected with a receiver.</p>
+<dl class="section return"><dt>Returns</dt><dd>true when connected. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="rcRemoteProtocol_8cpp_source.html#l00189">189</a> of file <a class="el" href="rcRemoteProtocol_8cpp_source.html">rcRemoteProtocol.cpp</a>.</p>
+
+</div>
+</div>
+<a id="abe891a9762ba2f3efc1897b0376f93bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe891a9762ba2f3efc1897b0376f93bf">&#9670;&nbsp;</a></span>update()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -274,13 +322,43 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">int8_t RemoteProtocol::update </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>channels</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>telemetry</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Update the communications with the currently connected device</p>
-<dl class="section note"><dt>Note</dt><dd>We should have already be connected with a device before calling update, see <a class="el" href="classRemoteProtocol.html#a0948e420ac812906e683fb47041287b8">connect()</a> </dd></dl>
+<p>This function holds until a specific amount of time has passed since it was last called to fulfill <a class="el" href="classRCSettings.html#a510113b8a934cf3de517f8c7989b4303">RCSettings.setCommsFrequency()</a></p>
+<p>If telemetry is received from the receiver, telemetry will be updated, and returns 1.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">channels</td><td>array of size <a class="el" href="classRCSettings.html#a651a8388732483ad29b1fdf03ab066f3">RCSettings.setNumChannels()</a> to send </td></tr>
+    <tr><td class="paramname">telemetry</td><td>array of size <a class="el" href="classRCSettings.html#a11ad2922d2de9e69711ad643bdd7db3b">RCSettings.setPayloadSize()</a> to receive</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>&gt;= 0 if successful </dd>
+<dd>
+1 if telemetry was received </dd>
+<dd>
+<a class="el" href="rcRemoteProtocol_8h.html#a53aeb555a0a2758d7aaf999e11203a2d">RC_INFO_TICK_TOO_SHORT</a> if <a class="el" href="classRCSettings.html#a510113b8a934cf3de517f8c7989b4303">RCSettings.setCommsFrequency()</a> is too high </dd>
+<dd>
+<a class="el" href="rcGlobal_8h.html#a20eddd07f1bb69f53a6ee7645eece37a">RC_ERROR_NOT_CONNECTED</a> if there is no device connected </dd>
+<dd>
+<a class="el" href="rcRemoteProtocol_8h.html#afcbbfa246e44dc27878e11a7c9d4ec58">RC_ERROR_PACKET_NOT_SENT</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="rcRemoteProtocol_8cpp_source.html#l00217">217</a> of file <a class="el" href="rcRemoteProtocol_8cpp_source.html">rcRemoteProtocol.cpp</a>.</p>
 
 </div>
 </div>
@@ -291,7 +369,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Nov 18 2017 13:27:02 for rcProtocol by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jan 1 2018 16:03:30 for rcProtocol by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

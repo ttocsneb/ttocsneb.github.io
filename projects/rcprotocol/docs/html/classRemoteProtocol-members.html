@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">rcProtocol
-   &#160;<span id="projectnumber">V.0.1.0</span>
+   &#160;<span id="projectnumber">V.0.2.1</span>
    </div>
    <div id="projectbrief">A protocol for diy transmitters/receivers</div>
   </td>
@@ -67,17 +67,30 @@ $(function() {
 
 <p>This is the complete list of members for <a class="el" href="classRemoteProtocol.html">RemoteProtocol</a>, including all inherited members.</p>
 <table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="classRCGlobal.html#ab898a024bf5a70a975ffd18d5c330f82">_ACK</a></td><td class="entry"><a class="el" href="classRCGlobal.html">RCGlobal</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classRCGlobal.html#a81017470cdd91021b11eca71c135d8ca">_NACK</a></td><td class="entry"><a class="el" href="classRCGlobal.html">RCGlobal</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classRCGlobal.html#a69eda6e5e5664db8758ae34daacb6b5f">_PAIR_ADDRESS</a></td><td class="entry"><a class="el" href="classRCGlobal.html">RCGlobal</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classRCGlobal.html#a00beb4a4d3c7ee8e7b19449be8b5251f">_pairSettings</a></td><td class="entry"><a class="el" href="classRCGlobal.html">RCGlobal</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classRCGlobal.html#a4015d8b01a2386cffa9b046d4a915452">_radio</a></td><td class="entry"><a class="el" href="classRCGlobal.html">RCGlobal</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classRCGlobal.html#ad6f0d64a9dc506c4acea255dc2ced144">_settings</a></td><td class="entry"><a class="el" href="classRCGlobal.html">RCGlobal</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classRCGlobal.html#a41d3f060ef88b1f53b0f26e1af4ea73a">_TEST</a></td><td class="entry"><a class="el" href="classRCGlobal.html">RCGlobal</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classRCGlobal.html#a77517a15783c4991b7ff7567157fbbb8">apply_settings</a>(RCSettings *settings)</td><td class="entry"><a class="el" href="classRCGlobal.html">RCGlobal</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classRemoteProtocol.html#ac59aca8e8ce184ea9b46187e92708027">begin</a>()</td><td class="entry"><a class="el" href="classRemoteProtocol.html">RemoteProtocol</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classRemoteProtocol.html#a6c79a9aff87a0ef816d49e1eda9a639e">checkIfValid</a> typedef</td><td class="entry"><a class="el" href="classRemoteProtocol.html">RemoteProtocol</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classRemoteProtocol.html#a0948e420ac812906e683fb47041287b8">connect</a>(checkIfValid checkIfValid)</td><td class="entry"><a class="el" href="classRemoteProtocol.html">RemoteProtocol</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classRemoteProtocol.html#ac35879305b9a753c2b630979e4fb4aee">pair</a>(saveSettings saveSettings)</td><td class="entry"><a class="el" href="classRemoteProtocol.html">RemoteProtocol</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classRCGlobal.html#aa005123f170a1eb3c376b21b82dc75e5">flush_buffer</a>()</td><td class="entry"><a class="el" href="classRCGlobal.html">RCGlobal</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classRCGlobal.html#aa12a331186fc8640ac922a07e2ed885a">force_send</a>(void *buf, uint8_t size, unsigned long timeout)</td><td class="entry"><a class="el" href="classRCGlobal.html">RCGlobal</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classRemoteProtocol.html#a4d174ef72f32cb005f7e0d217cad5320">isConnected</a>()</td><td class="entry"><a class="el" href="classRemoteProtocol.html">RemoteProtocol</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classRemoteProtocol.html#ac35879305b9a753c2b630979e4fb4aee">pair</a>(saveSettings saveSettings)</td><td class="entry"><a class="el" href="classRemoteProtocol.html">RemoteProtocol</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classRCGlobal.html#a1bd2f0b7f47b981287da0f0949a09891">RCGlobal</a>()</td><td class="entry"><a class="el" href="classRCGlobal.html">RCGlobal</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classRemoteProtocol.html#ac372a2187a4cdb43443834ad104b92e6">RemoteProtocol</a>(RF24 *tranceiver, const uint8_t remoteId[])</td><td class="entry"><a class="el" href="classRemoteProtocol.html">RemoteProtocol</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classRemoteProtocol.html#ab9e87c74f439c0cadd0823afb1509d55">saveSettings</a> typedef</td><td class="entry"><a class="el" href="classRemoteProtocol.html">RemoteProtocol</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classRemoteProtocol.html#ad837e6469d792f906551293ce0a9ad71">update</a>()</td><td class="entry"><a class="el" href="classRemoteProtocol.html">RemoteProtocol</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classRemoteProtocol.html#abe891a9762ba2f3efc1897b0376f93bf">update</a>(uint16_t channels[], uint8_t telemetry[])</td><td class="entry"><a class="el" href="classRemoteProtocol.html">RemoteProtocol</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classRCGlobal.html#ab9afad5d7c6ee7135e734e8968a08525">wait_till_available</a>(unsigned long timeout)</td><td class="entry"><a class="el" href="classRCGlobal.html">RCGlobal</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Nov 18 2017 13:27:02 for rcProtocol by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jan 1 2018 16:03:30 for rcProtocol by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

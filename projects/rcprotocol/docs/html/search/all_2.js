@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['checkifvalid',['checkIfValid',['../classRemoteProtocol.html#a6c79a9aff87a0ef816d49e1eda9a639e',1,'RemoteProtocol']]],
-  ['connect',['connect',['../classDeviceProtocol.html#a099b7b72a19262ab5ff19a41c9ce0a9e',1,'DeviceProtocol::connect()'],['../classRemoteProtocol.html#a0948e420ac812906e683fb47041287b8',1,'RemoteProtocol::connect()']]]
+  ['begin',['begin',['../classDeviceProtocol.html#a78ee16439248ac681272017861d04f61',1,'DeviceProtocol::begin()'],['../classRemoteProtocol.html#ac59aca8e8ce184ea9b46187e92708027',1,'RemoteProtocol::begin()']]]
 ];
