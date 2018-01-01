@@ -73,9 +73,11 @@ img {
 }
 .carousel-control.left span {
 	padding-top: 15px;
+    color: white;
 }
 .carousel-control.right span {
 	padding-top: 15px;
+    color: white;
 }
 
 .carousel-control.left span:hover,
@@ -97,15 +99,15 @@ img {
 }
 
 .container a {
-    font-family: monospace;
-    font-weight: 700;
-    color: white;
+    color: darkseagreen;
 }
 
-a:hover {
-    color: lightgrey;
-    /*font-weight: bold;*/
-    text-decoration: none;
+.container a:visited {
+    color: skyblue;
+}
+
+.container a:hover {
+    color: darkgray;
 }
 
 .jumbotron {

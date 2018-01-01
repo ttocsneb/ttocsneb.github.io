@@ -1,12 +1,13 @@
 {
   "featured": [
+    "2017/10/remote_api_pair_connect.md",
+    "2017/10/remote.md",
     "2017/6/weatherstation_software.md",
-    "2017/04/weatherstation pt2.md",
-    "2017/04/weatherstation.md",
-    "2017/03/lotf1.md"
+    "2017/04/weatherstation pt2.md"
   ],
   "template": "templates",
   "markdown": "blogposts",
+  "projects": "projects",
   "blog": "blog",
-  "featuredhash": -356366790
+  "featuredhash": -1924453432
 }
