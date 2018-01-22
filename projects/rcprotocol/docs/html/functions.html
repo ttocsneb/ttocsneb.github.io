@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">rcProtocol
-   &#160;<span id="projectnumber">V.0.2.1</span>
+   &#160;<span id="projectnumber">V.0.3.0</span>
    </div>
    <div id="projectbrief">A protocol for diy transmitters/receivers</div>
   </td>
@@ -66,8 +66,26 @@ $(function() {
 <li>_ACK
 : <a class="el" href="classRCGlobal.html#ab898a024bf5a70a975ffd18d5c330f82">RCGlobal</a>
 </li>
+<li>_DISCONNECT
+: <a class="el" href="classRCGlobal.html#aada122a1ea5f637c5107521d63084706">RCGlobal</a>
+</li>
 <li>_NACK
 : <a class="el" href="classRCGlobal.html#a81017470cdd91021b11eca71c135d8ca">RCGlobal</a>
+</li>
+<li>_PACKET_CHANNELS
+: <a class="el" href="classRCGlobal.html#a08b58cc3707b98cf4b58b5cf15cbf498">RCGlobal</a>
+</li>
+<li>_PACKET_DISCONNECT
+: <a class="el" href="classRCGlobal.html#a65fdaeed00713203f4e513bda6974dbc">RCGlobal</a>
+</li>
+<li>_PACKET_RECONNECT
+: <a class="el" href="classRCGlobal.html#a65e71d74231844cf6d31702a9a2a7d6b">RCGlobal</a>
+</li>
+<li>_PACKET_UPDATE_RECVR_SETTINGS
+: <a class="el" href="classRCGlobal.html#a1189d7c1adb9df0d7eff0c0e6aacafc1">RCGlobal</a>
+</li>
+<li>_PACKET_UPDATE_TRANS_SETTINGS
+: <a class="el" href="classRCGlobal.html#aac7c9608ddc9a0eb2e19d94d7acc66bb">RCGlobal</a>
 </li>
 <li>_PAIR_ADDRESS
 : <a class="el" href="classRCGlobal.html#a69eda6e5e5664db8758ae34daacb6b5f">RCGlobal</a>
@@ -96,19 +114,22 @@ $(function() {
 
 <h3><a id="index_b"></a>- b -</h3><ul>
 <li>begin()
-: <a class="el" href="classDeviceProtocol.html#a78ee16439248ac681272017861d04f61">DeviceProtocol</a>
-, <a class="el" href="classRemoteProtocol.html#ac59aca8e8ce184ea9b46187e92708027">RemoteProtocol</a>
+: <a class="el" href="classDeviceProtocol.html#a5065a796dc349bf9b8e1318d54840cd1">DeviceProtocol</a>
+, <a class="el" href="classRemoteProtocol.html#a15ce4b1905d60d27d25afb87287a835f">RemoteProtocol</a>
 </li>
 </ul>
 
 
 <h3><a id="index_c"></a>- c -</h3><ul>
+<li>checkConnected
+: <a class="el" href="classDeviceProtocol.html#a58c3a9016ff63e08af86b0fcc3334cce">DeviceProtocol</a>
+</li>
 <li>checkIfValid
 : <a class="el" href="classRemoteProtocol.html#a6c79a9aff87a0ef816d49e1eda9a639e">RemoteProtocol</a>
 </li>
 <li>connect()
-: <a class="el" href="classDeviceProtocol.html#a099b7b72a19262ab5ff19a41c9ce0a9e">DeviceProtocol</a>
-, <a class="el" href="classRemoteProtocol.html#a0948e420ac812906e683fb47041287b8">RemoteProtocol</a>
+: <a class="el" href="classDeviceProtocol.html#a1ba8419422bfd79c933c6b5bfcf0ebc7">DeviceProtocol</a>
+, <a class="el" href="classRemoteProtocol.html#a36b764571fc763d68db1e738cd8759f6">RemoteProtocol</a>
 </li>
 </ul>
 
@@ -116,6 +137,9 @@ $(function() {
 <h3><a id="index_d"></a>- d -</h3><ul>
 <li>DeviceProtocol()
 : <a class="el" href="classDeviceProtocol.html#aab81f811050405c0bc4b2c1e6b77f2b1">DeviceProtocol</a>
+</li>
+<li>disconnect()
+: <a class="el" href="classRemoteProtocol.html#a32d3032a06f222d1c85c4f7b0d8c6535">RemoteProtocol</a>
 </li>
 </ul>
 
@@ -146,6 +170,9 @@ $(function() {
 <li>getEnableDynamicPayload()
 : <a class="el" href="classRCSettings.html#ae5677e3a57bbf02a827ee83fb894fab0">RCSettings</a>
 </li>
+<li>getLastConnection
+: <a class="el" href="classRemoteProtocol.html#a1a93caeeb9a5dc14d7f415e4283eb25c">RemoteProtocol</a>
+</li>
 <li>getNumChannels()
 : <a class="el" href="classRCSettings.html#a9e403102738d0dca12be06209f895b7c">RCSettings</a>
 </li>
@@ -156,7 +183,9 @@ $(function() {
 : <a class="el" href="classRCSettings.html#a4aacf42d26a02fa1e3a18754abb9dcfa">RCSettings</a>
 </li>
 <li>getSettings()
-: <a class="el" href="classRCSettings.html#aa9b1a8fb788eb258de077487c8bbdb17">RCSettings</a>
+: <a class="el" href="classDeviceProtocol.html#aa4daa45ceed201ba9777c631a871d7c2">DeviceProtocol</a>
+, <a class="el" href="classRCSettings.html#aa9b1a8fb788eb258de077487c8bbdb17">RCSettings</a>
+, <a class="el" href="classRemoteProtocol.html#ad2dd816689a0852abd30611aca1b089a">RemoteProtocol</a>
 </li>
 <li>getStartChannel()
 : <a class="el" href="classRCSettings.html#a2386acf827de14e9f238e16b35f107e1">RCSettings</a>
@@ -168,6 +197,13 @@ $(function() {
 <li>isConnected()
 : <a class="el" href="classDeviceProtocol.html#a0850a49dfc2a98c34e40a8f4be1ae6cc">DeviceProtocol</a>
 , <a class="el" href="classRemoteProtocol.html#a4d174ef72f32cb005f7e0d217cad5320">RemoteProtocol</a>
+</li>
+</ul>
+
+
+<h3><a id="index_l"></a>- l -</h3><ul>
+<li>loadRemoteID
+: <a class="el" href="classDeviceProtocol.html#a050d0a13eec2d00dbeea1323a5046e6c">DeviceProtocol</a>
 </li>
 </ul>
 
@@ -206,6 +242,9 @@ $(function() {
 <li>setCommsFrequency()
 : <a class="el" href="classRCSettings.html#a510113b8a934cf3de517f8c7989b4303">RCSettings</a>
 </li>
+<li>setConnected
+: <a class="el" href="classDeviceProtocol.html#a2f0d93804307aba4e0cfdd49714d2e80">DeviceProtocol</a>
+</li>
 <li>setDataRate()
 : <a class="el" href="classRCSettings.html#a2cf1d3abd31a8b1819d3d18ccc5b62f3">RCSettings</a>
 </li>
@@ -217,6 +256,9 @@ $(function() {
 </li>
 <li>setEnableDynamicPayload()
 : <a class="el" href="classRCSettings.html#aef668da92dc55272625962b08f9040aa">RCSettings</a>
+</li>
+<li>setLastConnection
+: <a class="el" href="classRemoteProtocol.html#a5c06047616d96f14492846e3b9d417f2">RemoteProtocol</a>
 </li>
 <li>setNumChannels()
 : <a class="el" href="classRCSettings.html#a651a8388732483ad29b1fdf03ab066f3">RCSettings</a>
@@ -238,8 +280,8 @@ $(function() {
 
 <h3><a id="index_u"></a>- u -</h3><ul>
 <li>update()
-: <a class="el" href="classDeviceProtocol.html#a19501f2313a78c880f6293ebbc09fdfa">DeviceProtocol</a>
-, <a class="el" href="classRemoteProtocol.html#abe891a9762ba2f3efc1897b0376f93bf">RemoteProtocol</a>
+: <a class="el" href="classDeviceProtocol.html#a60ed6f76dbb611dec03cb276f418c428">DeviceProtocol</a>
+, <a class="el" href="classRemoteProtocol.html#a3b4c9573b6b718554a73dd9e15743818">RemoteProtocol</a>
 </li>
 </ul>
 
@@ -252,7 +294,7 @@ $(function() {
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 1 2018 16:03:31 for rcProtocol by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jan 21 2018 16:29:50 for rcProtocol by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

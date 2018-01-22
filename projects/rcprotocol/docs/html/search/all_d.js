@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['wait_5ftill_5favailable',['wait_till_available',['../classRCGlobal.html#ab9afad5d7c6ee7135e734e8968a08525',1,'RCGlobal']]]
+  ['update',['update',['../classDeviceProtocol.html#a60ed6f76dbb611dec03cb276f418c428',1,'DeviceProtocol::update()'],['../classRemoteProtocol.html#a3b4c9573b6b718554a73dd9e15743818',1,'RemoteProtocol::update()']]]
 ];

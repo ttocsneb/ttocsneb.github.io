@@ -1,6 +1,7 @@
 var searchData=
 [
   ['rc_5fconnect_5ftimeout',['RC_CONNECT_TIMEOUT',['../rcGlobal_8h.html#a3d1d5db4e86ad41329ba0cdf29083424',1,'rcGlobal.h']]],
+  ['rc_5ferror_5falready_5fconnected',['RC_ERROR_ALREADY_CONNECTED',['../rcGlobal_8h.html#a8a50d23b34198b22b43b63a9ac043f9a',1,'rcGlobal.h']]],
   ['rc_5ferror_5fbad_5fdata',['RC_ERROR_BAD_DATA',['../rcGlobal_8h.html#a8ace11b378f3e28814fc1c089dc4b516',1,'rcGlobal.h']]],
   ['rc_5ferror_5fconnection_5frefused',['RC_ERROR_CONNECTION_REFUSED',['../rcGlobal_8h.html#a553492d75e659619528b25c13060ab65',1,'rcGlobal.h']]],
   ['rc_5ferror_5flost_5fconnection',['RC_ERROR_LOST_CONNECTION',['../rcGlobal_8h.html#a731ce428ac516139e9956858bb39d35b',1,'rcGlobal.h']]],

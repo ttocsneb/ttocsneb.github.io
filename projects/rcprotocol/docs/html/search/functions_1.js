@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['begin',['begin',['../classDeviceProtocol.html#a78ee16439248ac681272017861d04f61',1,'DeviceProtocol::begin()'],['../classRemoteProtocol.html#ac59aca8e8ce184ea9b46187e92708027',1,'RemoteProtocol::begin()']]]
+  ['begin',['begin',['../classDeviceProtocol.html#a5065a796dc349bf9b8e1318d54840cd1',1,'DeviceProtocol::begin()'],['../classRemoteProtocol.html#a15ce4b1905d60d27d25afb87287a835f',1,'RemoteProtocol::begin()']]]
 ];

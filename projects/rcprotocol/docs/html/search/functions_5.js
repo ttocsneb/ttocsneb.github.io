@@ -8,6 +8,6 @@ var searchData=
   ['getnumchannels',['getNumChannels',['../classRCSettings.html#a9e403102738d0dca12be06209f895b7c',1,'RCSettings']]],
   ['getpayloadsize',['getPayloadSize',['../classRCSettings.html#af8382aa3a6e90e2508e65d4e66641365',1,'RCSettings']]],
   ['getretrydelay',['getRetryDelay',['../classRCSettings.html#a4aacf42d26a02fa1e3a18754abb9dcfa',1,'RCSettings']]],
-  ['getsettings',['getSettings',['../classRCSettings.html#aa9b1a8fb788eb258de077487c8bbdb17',1,'RCSettings']]],
+  ['getsettings',['getSettings',['../classDeviceProtocol.html#aa4daa45ceed201ba9777c631a871d7c2',1,'DeviceProtocol::getSettings()'],['../classRemoteProtocol.html#ad2dd816689a0852abd30611aca1b089a',1,'RemoteProtocol::getSettings()'],['../classRCSettings.html#aa9b1a8fb788eb258de077487c8bbdb17',1,'RCSettings::getSettings()']]],
   ['getstartchannel',['getStartChannel',['../classRCSettings.html#a2386acf827de14e9f238e16b35f107e1',1,'RCSettings']]]
 ];

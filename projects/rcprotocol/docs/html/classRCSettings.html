@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">rcProtocol
-   &#160;<span id="projectnumber">V.0.2.1</span>
+   &#160;<span id="projectnumber">V.0.3.0</span>
    </div>
    <div id="projectbrief">A protocol for diy transmitters/receivers</div>
   </td>
@@ -137,7 +137,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Create a new instance of <a class="el" href="classRCSettings.html">RCSettings</a>.</p>
 <p>When you create <a class="el" href="classRCSettings.html">RCSettings</a> all of the default values will be set.</p>
-<p>This object is used by <a class="el" href="classDeviceProtocol.html#a78ee16439248ac681272017861d04f61">DeviceProtocol::begin()</a> </p>
+<p>This object is used by <a class="el" href="classDeviceProtocol.html#a5065a796dc349bf9b8e1318d54840cd1">DeviceProtocol::begin()</a> </p>
 
 <p class="definition">Definition at line <a class="el" href="rcSettings_8cpp_source.html#l00005">5</a> of file <a class="el" href="rcSettings_8cpp_source.html">rcSettings.cpp</a>.</p>
 
@@ -209,6 +209,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Enable/Disable Dynamic payloads</p>
 <p>Dynamic payloads don't have a specific payload size, and will vary from transaction to transaction.</p>
+<dl class="section warning"><dt>Warning</dt><dd>DynamicPayloads are not currently implemented</dd></dl>
 <p>If you disable dynamic payloads, see <a class="el" href="classRCSettings.html#a11ad2922d2de9e69711ad643bdd7db3b">setPayloadSize()</a></p>
 <p>Uses <code>0b00000001</code> of byte 0</p>
 <p>Default: false</p>
@@ -313,6 +314,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Enable/Disable Custom Ack Paylaods</p>
 <p>Custom ack payloads allow acknowledgments to be filled with custom data. <a class="el" href="classRCSettings.html#af0c3ccc41d7ed134fa55bfc4cc7b5031">setEnableAck()</a> needs to be enabled for this to work.</p>
+<dl class="section warning"><dt>Warning</dt><dd>Disabling AckPayloads is not yet implemented</dd></dl>
 <p>This should be set to true to enable telemetry data.</p>
 <p>Uses <code>0b00000100</code> 0f byte 0</p>
 <p>Default: true</p>
@@ -474,6 +476,7 @@ Public Member Functions</h2></td></tr>
 <p>Payload Size</p>
 <p>Set the size of the payload in bytes</p>
 <dl class="section note"><dt>Note</dt><dd>This can't be set higher than 32</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Values other than 32 are not fully implemented, use at your own risk!</dd></dl>
 <p>Uses byte 2</p>
 <p>Default: 32</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -634,7 +637,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Number of channels in a packet</p>
 <p>Set the number of channels in a packet, each channel uses 2 bytes default, so a 32 byte packet can hold up to 15 channels.</p>
-<p>In the future, I may support multi-packet transmissions to allow more channels.</p>
+<dl class="section note"><dt>Note</dt><dd>In the future, I may support multi-packet transmissions to allow more channels.</dd></dl>
 <p>Uses byte 5</p>
 <p>Default: 6</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -696,7 +699,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 1 2018 16:03:30 for rcProtocol by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jan 21 2018 16:29:49 for rcProtocol by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>
